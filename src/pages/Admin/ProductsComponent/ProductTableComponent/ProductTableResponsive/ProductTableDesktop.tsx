@@ -1,0 +1,214 @@
+import {
+	Table,
+	TableHeader,
+	TableColumn,
+	TableBody,
+	TableRow,
+	TableCell,
+	Avatar,
+	Button,
+	Chip,
+	useDisclosure,
+	Pagination,
+} from "@heroui/react";
+import { useState } from "react";
+
+import { TrashIcon, PencilIcon } from "@/components/icons";
+import { ItemTableRow } from "@/model/ui/Admin/item_table_row";
+import { AddEditItemModal } from "@/pages/Admin/ProductsComponent/AddEditItemModal";
+
+export function ProductTableDesktop({
+	items,
+	onOpenDeleteConfirm,
+	setSelectedDeleteItem,
+	page,
+	totalPages,
+	onChangePage,
+}: {
+	items: ItemTableRow[];
+	onOpenDeleteConfirm: () => void;
+	setSelectedDeleteItem: (item: { id: string; name: string }) => void;
+	page: number;
+	totalPages: number;
+	onChangePage: (page: number) => void;
+}) {
+	const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
+	const [itemHasVariant, setItemHasVariant] = useState<boolean>(false);
+	const {
+		isOpen: isOpenEditItem,
+		onOpen: onOpenEditItem,
+		onOpenChange: onOpenChangeEditItem,
+	} = useDisclosure();
+
+	return (
+		<div className="sm:flex hidden flex-1 min-h-0 flex-col">
+			<Table
+				isHeaderSticky
+				className="overflow-y-auto h-full w-full"
+				bottomContent={
+					totalPages > 1 && (
+						<div className="flex w-full justify-center">
+							<Pagination
+								isCompact
+								showControls
+								showShadow
+								color="success"
+								page={page}
+								total={totalPages}
+								onChange={onChangePage}
+							/>
+						</div>
+					)
+				}
+			>
+				<TableHeader>
+					<TableColumn>ITEM</TableColumn>
+					<TableColumn>PRICE</TableColumn>
+					<TableColumn>TOTAL STOCK</TableColumn>
+					<TableColumn>CATEGORY</TableColumn>
+					<TableColumn>TAG</TableColumn>
+					<TableColumn>ACTIONS</TableColumn>
+				</TableHeader>
+
+				<TableBody emptyContent={"No items found."}>
+					{items.map((item, i) => (
+						<TableRow key={i + 1}>
+							<TableCell>
+								<div className="flex flex-row items-center gap-2">
+									<Avatar size="md" src={item.item_img_url} />
+									<div className="flex flex-col items-start">
+										<span className="text-base font-bold">
+											{item.item_name}
+										</span>
+										<span className="text-sm italic text-default-500">
+											{item.item_variant_count > 1
+												? `${item.item_variant_count} variants`
+												: "No variant"}
+										</span>
+									</div>
+								</div>
+							</TableCell>
+							<TableCell>
+								<div className="flex flex-row gap-2 items-center">
+									<div className="flex flex-col items-start">
+										<span className="font-light italic text-xs text-default-500">
+											Starts from
+										</span>
+										<span className="text-base font-bold">
+											₱
+											{Number(
+												item.item_min_price,
+											).toLocaleString("en-US", {
+												minimumFractionDigits: 2,
+												maximumFractionDigits: 2,
+											})}{" "}
+											per {item.item_sold_by}
+										</span>
+									</div>
+								</div>
+							</TableCell>
+							<TableCell>
+								<div className="flex flex-col items-start">
+									{item.variant_stock > 0 ? (
+										<span className="text-base font-bold">
+											{item.variant_stock.toLocaleString()}{" "}
+											{item.item_sold_by}s left
+										</span>
+									) : (
+										<span className="text-base font-bold text-danger-500">
+											Out of stock
+										</span>
+									)}
+
+									{item.item_variant_count > 1 && (
+										<div className="flex flex-col">
+											{item.no_stock_variants > 0 && (
+												<span className="text-xs font-bold text-danger-500">
+													{item.no_stock_variants}{" "}
+													variant no stock
+												</span>
+											)}
+											{item.no_stock_variants === 0 &&
+												item.low_stock_variants > 0 && (
+													<span className="text-xs font-bold text-warning-500">
+														{
+															item.low_stock_variants
+														}{" "}
+														variant low stock
+													</span>
+												)}
+										</div>
+									)}
+									{item.item_variant_count <= 1 &&
+										item.variant_stock > 0 &&
+										item.low_stock_variants > 0 && (
+											<span className="text-xs font-bold text-warning-500">
+												Low stock
+											</span>
+										)}
+								</div>
+							</TableCell>
+							<TableCell>
+								<div className="flex flex-col items-start">
+									<span className="text-base font-bold">
+										{item.item_category}
+									</span>
+								</div>
+							</TableCell>
+							<TableCell>
+								{item.item_tag ? (
+									<Chip variant="flat">{item.item_tag}</Chip>
+								) : (
+									<span className="text-sm italic text-default-500">
+										No tag
+									</span>
+								)}
+							</TableCell>
+
+							<TableCell>
+								<div className="flex flex-row items-center gap-1">
+									<Button
+										isIconOnly
+										size="sm"
+										variant="light"
+										onPress={() => {
+											setItemHasVariant(
+												item.item_variant_count > 1,
+											);
+											setSelectedItemId(item.item_id);
+											onOpenEditItem();
+										}}
+									>
+										<PencilIcon className="w-5" />
+									</Button>
+
+									<Button
+										isIconOnly
+										size="sm"
+										variant="light"
+										onPress={() => {
+											setSelectedDeleteItem({
+												id: item.item_id,
+												name: item.item_name,
+											});
+											onOpenDeleteConfirm();
+										}}
+									>
+										<TrashIcon className="w-5 text-danger-300" />
+									</Button>
+								</div>
+							</TableCell>
+						</TableRow>
+					))}
+				</TableBody>
+			</Table>
+
+			<AddEditItemModal
+				isOpen={isOpenEditItem}
+				itemHasVariant={itemHasVariant}
+				selectedItemId={selectedItemId}
+				onOpenChange={onOpenChangeEditItem}
+			/>
+		</div>
+	);
+}

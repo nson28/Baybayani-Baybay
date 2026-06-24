@@ -1,0 +1,230 @@
+import {
+	Table,
+	TableHeader,
+	TableColumn,
+	TableBody,
+	TableRow,
+	TableCell,
+	Dropdown,
+	DropdownTrigger,
+	DropdownMenu,
+	DropdownItem,
+	Button,
+	DropdownSection,
+	useDisclosure,
+	Pagination,
+} from "@heroui/react";
+import { useState } from "react";
+
+import { MoreIconVertical, PencilIcon, TrashIcon } from "@/components/icons";
+import { ItemTableRow } from "@/model/ui/Admin/item_table_row";
+import { AddEditItemModal } from "@/pages/Admin/ProductsComponent/AddEditItemModal";
+
+export function ProductTableMobile({
+	items,
+	onOpenDeleteConfirm,
+	setSelectedDeleteItem,
+	page,
+	totalPages,
+	onChangePage,
+}: {
+	items: ItemTableRow[];
+	onOpenDeleteConfirm: () => void;
+	setSelectedDeleteItem: (item: { id: string; name: string }) => void;
+	page: number;
+	totalPages: number;
+	onChangePage: (page: number) => void;
+}) {
+	const {
+		isOpen: isOpenEditItem,
+		onOpen: onOpenEditItem,
+		onOpenChange: onOpenChangeEditItem,
+	} = useDisclosure();
+	const [itemHasVariant, setItemHasVariant] = useState<boolean>(false);
+	const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
+
+	return (
+		<div className="sm:hidden flex-1 min-h-0 flex flex-col">
+			<Table
+				isHeaderSticky
+				className="overflow-y-auto h-full w-full"
+				bottomContent={
+					totalPages > 1 && (
+						<div className="flex w-full justify-center">
+							<Pagination
+								isCompact
+								showControls
+								showShadow
+								color="success"
+								page={page}
+								total={totalPages}
+								onChange={onChangePage}
+							/>
+						</div>
+					)
+				}
+			>
+				<TableHeader>
+					<TableColumn>ITEM</TableColumn>
+					<TableColumn>PRICE & STOCK</TableColumn>
+					<TableColumn>ACTIONS</TableColumn>
+				</TableHeader>
+
+				<TableBody emptyContent={"No items found."}>
+					{items.map((item, i) => (
+						<TableRow key={i + 1}>
+							<TableCell>
+								<div className="flex flex-row items-center gap-2">
+									<div className="flex flex-col items-start">
+										<span className="text-sm font-bold">
+											{item.item_name}
+										</span>
+										<span className="text-sm italic text-default-500">
+											{item.item_variant_count > 1
+												? `${item.item_variant_count} variants`
+												: "No variant"}
+										</span>
+
+										<span className="text-default-500 italic text-xs">
+											{item.item_category}
+										</span>
+										<span className="text-default-500 italic text-xs">
+											{item.item_tag ?? "No tag"}
+										</span>
+									</div>
+								</div>
+							</TableCell>
+							<TableCell>
+								<div className="flex flex-row gap-2 items-center">
+									<div className="flex flex-col items-start">
+										<span className="font-light italic text-xs text-default-500">
+											Starts from
+										</span>
+										<span className="font-bold">
+											₱
+											{Number(
+												item.item_min_price,
+											).toLocaleString("en-US", {
+												minimumFractionDigits: 2,
+												maximumFractionDigits: 2,
+											})}
+										</span>
+										<span className="font-light italic text-xs text-default-500">
+											per {item.item_sold_by}
+										</span>
+
+										{item.variant_stock > 0 ? (
+											<div className="flex flex-col items-start">
+												<span className="text-base font-bold">
+													{item.variant_stock.toLocaleString()}{" "}
+													{item.item_sold_by}s left
+												</span>
+												{item.item_variant_count <= 1 &&
+													item.low_stock_variants >
+														0 && (
+														<span className="text-xs font-bold text-warning-500">
+															Low stock
+														</span>
+													)}
+												{item.item_variant_count >
+													1 && (
+													<div className="flex flex-col">
+														{item.no_stock_variants >
+															0 && (
+															<span className="text-xs font-bold text-danger-500">
+																{
+																	item.no_stock_variants
+																}{" "}
+																variant no stock
+															</span>
+														)}
+														{item.no_stock_variants ===
+															0 &&
+															item.low_stock_variants >
+																0 && (
+																<span className="text-xs font-bold text-warning-500">
+																	{
+																		item.low_stock_variants
+																	}{" "}
+																	variant low
+																	stock
+																</span>
+															)}
+													</div>
+												)}
+											</div>
+										) : (
+											<span className="text-base font-bold text-danger-500">
+												Out of stock
+											</span>
+										)}
+									</div>
+								</div>
+							</TableCell>
+							<TableCell>
+								<Dropdown>
+									<DropdownTrigger>
+										<Button size="sm" variant="light">
+											<MoreIconVertical className="w-5" />
+										</Button>
+									</DropdownTrigger>
+									<DropdownMenu aria-label="Static Actions">
+										<DropdownSection title="Manage Item">
+											<DropdownItem
+												key="pending"
+												startContent={
+													<PencilIcon className="w-5" />
+												}
+												onClick={() => {
+													setItemHasVariant(
+														item.item_variant_count >
+															1,
+													);
+													setSelectedItemId(
+														item.item_id,
+													);
+													onOpenEditItem();
+												}}
+											>
+												<div className="flex items-center gap-2">
+													<span>Edit</span>
+												</div>
+											</DropdownItem>
+
+											<DropdownItem
+												key="cancel"
+												startContent={
+													<TrashIcon className="w-5 text-danger-300" />
+												}
+												onPress={() => {
+													setSelectedDeleteItem({
+														id: item.item_id,
+														name: item.item_name,
+													});
+													onOpenDeleteConfirm();
+												}}
+											>
+												<div className="flex items-center gap-2">
+													<span className="text-danger">
+														Delete
+													</span>
+												</div>
+											</DropdownItem>
+										</DropdownSection>
+									</DropdownMenu>
+								</Dropdown>
+							</TableCell>
+						</TableRow>
+					))}
+				</TableBody>
+			</Table>
+
+			<AddEditItemModal
+				isOpen={isOpenEditItem}
+				itemHasVariant={itemHasVariant}
+				selectedItemId={selectedItemId}
+				onOpenChange={onOpenChangeEditItem}
+			/>
+		</div>
+	);
+}

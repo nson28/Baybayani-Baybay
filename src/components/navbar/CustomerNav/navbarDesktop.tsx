@@ -1,0 +1,321 @@
+import {
+	Navbar as HeroNavBar,
+	NavbarBrand,
+	NavbarContent,
+	NavbarItem,
+	Link,
+	DropdownItem,
+	DropdownTrigger,
+	Dropdown,
+	DropdownMenu,
+	Avatar,
+	Autocomplete,
+	AutocompleteItem,
+	Badge,
+	Spinner,
+	Button,
+} from "@heroui/react";
+import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+
+import {
+	BaybayaniLogo,
+	CartIcon,
+	OrdersIcon,
+	SearchIcon,
+} from "@/components/icons";
+import { useFetchNavbarItems } from "@/data/supabase/Customer/Products/useFetchNavbarItems";
+import ThemeSwitcher from "@/components/navbar/themeSwitcher";
+import { useRealtimeUserCart } from "@/data/supabase/Customer/Cart/useRealtimeUserCart";
+import { useRealtimeReadyOrders } from "@/data/supabase/Customer/Orders/useRealtimeReadyOrders";
+import { useLoginModal } from "@/ContextProvider/LoginModalContext/LoginModalContext";
+import { UserProfile } from "@/model/userProfile";
+import { User as AuthUser } from "@supabase/supabase-js";
+import { NotificationBell } from "@/pages/General/Notification/NotificationBell";
+
+export function Navbar({
+	user,
+	profile,
+	setSearchTerm,
+	handleSignOut,
+}: {
+	user: AuthUser | null;
+	profile: UserProfile | null;
+	setSearchTerm: (val: string) => void;
+	handleSignOut: () => Promise<void>;
+}) {
+	const [active, setActive] = useState("");
+	const [searchValue, setSearchValue] = useState("");
+	const [showSuggestions, setShowSuggestions] = useState(true);
+	const navigate = useNavigate();
+	const location = useLocation();
+	const { cartItems } = useRealtimeUserCart(user?.id ?? null);
+	const cartCount = cartItems.length;
+	const { readyCount } = useRealtimeReadyOrders(user?.id ?? null);
+	const { openLoginModal } = useLoginModal();
+
+	const { items: fetchedItems, isInitialLoading } =
+		useFetchNavbarItems(searchValue);
+	const searchItems = fetchedItems.map((i, index) => ({
+		label: i.item_title,
+		key: `${i.item_title}-${index}`,
+	}));
+
+	const submitSearch = (rawValue?: string) => {
+		const term = (rawValue ?? searchValue).trim();
+		if (location.pathname !== "/") {
+			navigate("/");
+		}
+		setSearchValue(term);
+		setSearchTerm(term);
+		(document.activeElement as HTMLInputElement | null)?.blur();
+	};
+
+	return (
+		<HeroNavBar position="static">
+			{/* Brand */}
+			<NavbarBrand className="flex-shrink-0 hidden sm:flex">
+				<Link
+					className="flex items-center gap-2"
+					href="/"
+					onClick={(e) => {
+						e.preventDefault();
+						setActive("");
+						navigate("/");
+					}}
+				>
+					<BaybayaniLogo className="size-10" />
+					<p className="font-bold hidden sm:block sm:text-lg">
+						<span className="text-[#146A38]">BAYBAY</span>
+						<span className="text-[#F9C424]">ANI</span>
+					</p>
+				</Link>
+			</NavbarBrand>
+
+			{/* Search bar */}
+			<NavbarContent
+				className="flex-grow px-2 max-w-full"
+				justify="center"
+			>
+				<Autocomplete
+					allowsCustomValue
+					fullWidth
+					className="w-full opacity-90"
+					defaultItems={searchItems}
+					isDisabled={isInitialLoading}
+					placeholder={
+						isInitialLoading
+							? "Gathering items..."
+							: "Search products..."
+					}
+					selectorIcon={null}
+					size="sm"
+					startContent={
+						isInitialLoading ? (
+							<Spinner color="success" size="sm" />
+						) : (
+							<SearchIcon className="size-5 text-default-500" />
+						)
+					}
+					inputValue={searchValue}
+					variant="flat"
+					onClear={() => {
+						setSearchValue("");
+						setSearchTerm("");
+						setShowSuggestions(false);
+					}}
+					onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+						if (e.key === "Enter") {
+							e.preventDefault();
+							submitSearch(e.currentTarget.value);
+						}
+					}}
+					onKeyUp={(e: React.KeyboardEvent<HTMLInputElement>) => {
+						// Android WebView keyboards may skip keydown Enter.
+						if (e.key === "Enter" || e.code === "Enter") {
+							e.preventDefault();
+							submitSearch(e.currentTarget.value);
+						}
+					}}
+					onInputChange={(val) => {
+						setSearchValue(val);
+
+						if (val.trim() === "") {
+							// reset search filter
+							setSearchTerm("");
+							setShowSuggestions(false);
+						} else {
+							setShowSuggestions(true);
+						}
+					}}
+				>
+					{showSuggestions
+						? searchItems.slice(0, 20).map((item) => (
+								<AutocompleteItem
+									key={item.key}
+									onClick={() => {
+										submitSearch(item.label);
+									}}
+								>
+									{item.label}
+								</AutocompleteItem>
+							))
+						: null}
+				</Autocomplete>
+				<div className="sm:hidden ml-2 flex-shrink-0">
+					<NotificationBell userId={user?.id} />
+				</div>
+			</NavbarContent>
+
+			{/* Cart + Avatar */}
+			<NavbarContent
+				as="div"
+				className="flex-shrink-0 items-center gap-4 hidden sm:flex"
+				justify="end"
+			>
+				<NavbarItem
+					className="hidden sm:inline-block"
+					isActive={active === "Orders"}
+				>
+					<Link
+						color="foreground"
+						href="/orders"
+						onClick={(e) => {
+							e.preventDefault();
+							if (!user) {
+								openLoginModal();
+								return;
+							}
+							setActive("Orders");
+							navigate("/orders");
+						}}
+					>
+						<div className="flex items-center gap-2">
+							{readyCount > 0 ? (
+								<Badge
+									color="danger"
+									content={String(readyCount)}
+									shape="circle"
+									showOutline={false}
+								>
+									<OrdersIcon className="size-6" />
+								</Badge>
+							) : (
+								<OrdersIcon className="size-6" />
+							)}
+							<span
+								className={`hidden sm:inline ${active === "Orders" ? "font-bold" : "font-normal"}`}
+							>
+								Orders
+							</span>
+						</div>
+					</Link>
+				</NavbarItem>
+				<NavbarItem
+					className="hidden sm:inline-block"
+					isActive={active === "Cart"}
+				>
+					<Link
+						color="foreground"
+						href="/cart"
+						onClick={(e) => {
+							e.preventDefault();
+							if (!user) {
+								openLoginModal();
+								return;
+							}
+							setActive("Cart");
+							navigate("/cart");
+						}}
+					>
+						<div className="flex items-center gap-2">
+							{cartCount > 0 ? (
+								<Badge
+									color="danger"
+									content={String(cartCount)}
+									shape="circle"
+									showOutline={false}
+								>
+									<CartIcon className="size-6" />
+								</Badge>
+							) : (
+								<CartIcon className="size-6" />
+							)}
+							<span
+								className={`hidden sm:inline ${active === "Cart" ? "font-bold" : "font-normal"}`}
+							>
+								Cart
+							</span>
+						</div>
+					</Link>
+				</NavbarItem>
+
+				<NavbarItem className="hidden sm:inline-block">
+					<NotificationBell userId={user?.id} />
+				</NavbarItem>
+
+				{user ? (
+					<Dropdown placement="bottom-end">
+						<DropdownTrigger>
+							<Avatar
+								isBordered
+								as="button"
+								className="transition-transform"
+								color="success"
+								name={profile?.user_name}
+								size="sm"
+								src={profile?.user_profile_img_url}
+							/>
+						</DropdownTrigger>
+						<DropdownMenu
+							aria-label="Profile Actions"
+							variant="flat"
+						>
+							<DropdownItem key="profile" className="h-14 gap-2">
+								<p className="font-semibold">Signed in as</p>
+								<p className="font-semibold">
+									{profile?.user_name}
+								</p>
+							</DropdownItem>
+							<DropdownItem key="theme">
+								<div className="flex flex-row w-full justify-between">
+									<span className="font-semibold">
+										Dark mode
+									</span>
+									<ThemeSwitcher />
+								</div>
+							</DropdownItem>
+							<DropdownItem
+								key="orders"
+								onPress={() => navigate("/orders")}
+							>
+								Orders
+							</DropdownItem>
+							<DropdownItem
+								key="settings"
+								onPress={() => navigate("/settings")}
+							>
+								Settings
+							</DropdownItem>
+							<DropdownItem
+								key="logout"
+								color="danger"
+								onPress={handleSignOut}
+							>
+								Log Out
+							</DropdownItem>
+						</DropdownMenu>
+					</Dropdown>
+				) : (
+					<Button
+						color="success"
+						variant="flat"
+						onPress={openLoginModal}
+					>
+						Log In
+					</Button>
+				)}
+			</NavbarContent>
+		</HeroNavBar>
+	);
+}

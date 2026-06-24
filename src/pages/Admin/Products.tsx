@@ -1,0 +1,76 @@
+import { useState, useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
+
+import { ProductIcon } from "@/components/icons";
+import { ProductSummary } from "@/pages/Admin/ProductsComponent/ProductSummary";
+import { FilterSection } from "@/pages/Admin/ProductsComponent/FilterSection";
+import { ProductTable } from "@/pages/Admin/ProductsComponent/ProductTable";
+import { useFetchProductsUI } from "@/data/supabase/Admin/Products/useFetchProductsUI";
+
+export default function Products() {
+	const { profile } = useOutletContext<any>();
+
+	useEffect(() => {
+		document.title = "Baybayani | Admin Products";
+	}, []);
+	const [searchQuery, setSearchQuery] = useState<string>("");
+	const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+	const [page, setPage] = useState<number>(1);
+
+	const [sortConfig, setSortConfig] = useState<{
+		column: string;
+		direction: "asc" | "desc";
+	} | null>(null);
+
+	const { items, setAllItems, loading, totalCount, pageSize } =
+		useFetchProductsUI(searchQuery, selectedCategories, sortConfig, page);
+
+	const totalPages = Math.ceil(totalCount / pageSize);
+
+	useEffect(() => {
+		setPage(1);
+	}, [searchQuery, selectedCategories, sortConfig]);
+
+	return (
+		<div className="flex flex-col gap-8 p-4 h-full">
+			<div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 shrink-0">
+				<div className="flex flex-row items-center gap-2">
+					<ProductIcon className="w-10" />
+					<div className="text-3xl font-semibold">Products</div>
+				</div>
+				<div className="flex flex-row gap-1 items-center text-muted-foreground">
+					<div className="text-base text-default-500">
+						Logged in as{" "}
+					</div>
+					<div className="text-lg font-semibold">
+						{profile?.user_name ?? "Admin"}
+					</div>
+				</div>
+			</div>
+			<div className="hidden sm:block shrink-0">
+				<ProductSummary />
+			</div>
+
+			<div className="flex flex-row items-center justify-between shrink-0">
+				<FilterSection
+					searchQuery={searchQuery}
+					selectedCategories={selectedCategories}
+					setSearchQuery={setSearchQuery}
+					setSelectedCategories={setSelectedCategories}
+					sortConfig={sortConfig}
+					setSortConfig={setSortConfig}
+				/>
+			</div>
+			<div className="flex-1 min-h-0">
+				<ProductTable
+					items={items}
+					loading={loading}
+					setAllItems={setAllItems}
+					page={page}
+					totalPages={totalPages}
+					onChangePage={setPage}
+				/>
+			</div>
+		</div>
+	);
+}

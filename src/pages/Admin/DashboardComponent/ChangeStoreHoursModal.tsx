@@ -1,0 +1,236 @@
+import {
+	Modal,
+	ModalContent,
+	ModalHeader,
+	ModalBody,
+	ModalFooter,
+	Button,
+	TimeInput,
+	addToast,
+} from "@heroui/react";
+import { useState, useEffect } from "react";
+import { Time } from "@internationalized/date";
+import { updateClosingTime } from "@/data/supabase/Admin/Dashboard/updateClosingTime";
+import { useClosingTimeContext } from "@/ContextProvider/ClosingTimeContext/ClosingTimeContext";
+
+function supabaseTimeToTimeObject(timeString: string): Time {
+	const [hour, minute, second] = timeString.split(":").map(Number);
+	return new Time(hour, minute, second);
+}
+
+function timeObjectToSupabase(time: Time): string {
+	const h = String(time.hour).padStart(2, "0");
+	const m = String(time.minute).padStart(2, "0");
+	const s = String(time.second ?? 0).padStart(2, "0");
+	return `${h}:${m}:${s}`;
+}
+
+export interface StoreHoursSnapshot {
+	closingDate: string;
+	openingDate: string;
+	closedForDay: boolean;
+}
+
+interface Props {
+	isOpenChangeTime: boolean;
+	onOpenChangeChangeTime: (isOpen: boolean) => void;
+	onClose: () => void;
+	/** Called immediately before the DB update — lets the parent update its display optimistically */
+	onOptimisticUpdate: (snapshot: StoreHoursSnapshot) => void;
+	/** Called on DB failure — lets the parent revert to the previous snapshot */
+	onRevert: (snapshot: StoreHoursSnapshot) => void;
+}
+
+export function ChangeStoreHoursModal({
+	isOpenChangeTime,
+	onOpenChangeChangeTime,
+	onClose,
+	onOptimisticUpdate,
+	onRevert,
+}: Props) {
+	const { rawClosingDate, rawOpeningDate, isClosedForTheDay } =
+		useClosingTimeContext();
+
+	const [closingTime, setClosingTime] = useState<Time | null>(null);
+	const [openingTime, setOpeningTime] = useState<Time | null>(null);
+	const [closedForDay, setClosedForDay] = useState(false);
+	const [isUpdating, setIsUpdating] = useState(false);
+
+	useEffect(() => {
+		if (rawClosingDate)
+			setClosingTime(supabaseTimeToTimeObject(rawClosingDate));
+	}, [rawClosingDate]);
+
+	useEffect(() => {
+		if (rawOpeningDate)
+			setOpeningTime(supabaseTimeToTimeObject(rawOpeningDate));
+	}, [rawOpeningDate]);
+
+	useEffect(() => {
+		setClosedForDay(isClosedForTheDay);
+	}, [isClosedForTheDay]);
+
+	const handleSave = async () => {
+		if (!closingTime || !openingTime) return;
+
+		const newClosingStr = timeObjectToSupabase(closingTime);
+		const newOpeningStr = timeObjectToSupabase(openingTime);
+
+		// Capture current values for potential revert
+		const previousSnapshot: StoreHoursSnapshot = {
+			closingDate: rawClosingDate ?? newClosingStr,
+			openingDate: rawOpeningDate ?? newOpeningStr,
+			closedForDay: isClosedForTheDay,
+		};
+
+		// Optimistic — update card immediately
+		onOptimisticUpdate({
+			closingDate: newClosingStr,
+			openingDate: newOpeningStr,
+			closedForDay,
+		});
+
+		setIsUpdating(true);
+		const { success } = await updateClosingTime(
+			newClosingStr,
+			newOpeningStr,
+			closedForDay,
+		);
+		setIsUpdating(false);
+
+		if (success) {
+			addToast({
+				title: "Success",
+				description: "Store hours updated successfully",
+				severity: "success",
+				timeout: 5000,
+				color: "success",
+				shouldShowTimeoutProgress: true,
+			});
+			onClose();
+		} else {
+			// Revert card to previous values
+			onRevert(previousSnapshot);
+			addToast({
+				title: "Error",
+				description: "Something went wrong updating store hours",
+				severity: "danger",
+				timeout: 5000,
+				color: "danger",
+				shouldShowTimeoutProgress: true,
+			});
+		}
+	};
+
+	return (
+		<Modal
+			isOpen={isOpenChangeTime}
+			onOpenChange={onOpenChangeChangeTime}
+			disableAnimation
+			backdrop="blur"
+		>
+			<ModalContent>
+				{(modalOnClose) => (
+					<>
+						<ModalHeader className="flex flex-col gap-1">
+							Edit Store Hours
+						</ModalHeader>
+
+						<ModalBody className="gap-6">
+							{/* Store Status */}
+							<div className="flex flex-col gap-2">
+								<span className="text-sm font-medium text-default-600">
+									Store Status
+								</span>
+
+								<div className="flex gap-2">
+									<Button
+										variant={
+											!closedForDay ? "solid" : "bordered"
+										}
+										color={
+											!closedForDay
+												? "success"
+												: "default"
+										}
+										className="flex-1"
+										onPress={() => setClosedForDay(false)}
+									>
+										Open
+									</Button>
+
+									<Button
+										variant={
+											closedForDay ? "solid" : "bordered"
+										}
+										color={
+											closedForDay ? "danger" : "default"
+										}
+										className="flex-1"
+										onPress={() => setClosedForDay(true)}
+									>
+										Closed
+									</Button>
+								</div>
+							</div>
+
+							{/* Time Inputs */}
+							<div className="flex flex-col gap-4 p-4 rounded-xl bg-default-100">
+								<span className="text-sm font-medium text-default-600">
+									Store Hours
+									<p className="text-xs text-default-500">
+										Configure when the store accepts orders
+									</p>
+								</span>
+
+								<div className="flex flex-row gap-3 items-center">
+									<TimeInput
+										label="Opening Time"
+										value={openingTime}
+										variant="bordered"
+										onChange={setOpeningTime}
+										isDisabled={closedForDay}
+										className="flex-1"
+									/>
+
+									<TimeInput
+										label="Closing Time"
+										value={closingTime}
+										variant="bordered"
+										onChange={setClosingTime}
+										isDisabled={closedForDay}
+										className="flex-1"
+									/>
+								</div>
+
+								{closedForDay && (
+									<span className="text-xs text-danger">
+										The store will be closed.
+									</span>
+								)}
+							</div>
+						</ModalBody>
+
+						<ModalFooter>
+							<Button
+								color="danger"
+								variant="light"
+								onPress={modalOnClose}
+							>
+								Cancel
+							</Button>
+
+							<Button
+								color="success"
+								onPress={handleSave}
+								isLoading={isUpdating}
+							>
+								Save Changes
+							</Button>
+						</ModalFooter>
+					</>
+				)}
+			</ModalContent>
+		</Modal>
+	);
+}

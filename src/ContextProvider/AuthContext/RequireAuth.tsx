@@ -1,0 +1,26 @@
+import { Navigate } from "react-router-dom";
+import { useAuth } from "@/ContextProvider/AuthContext/AuthProvider";
+import { useLoginModal } from "@/ContextProvider/LoginModalContext/LoginModalContext";
+import { ReactNode, useEffect } from "react";
+import FullPageLoader from "@/components/General/FullPageLoader";
+
+export default function RequireAuth({ children }: { children: ReactNode }) {
+	const auth = useAuth();
+	const user = auth?.user;
+	const loading = auth?.loading;
+	const { openLoginModal } = useLoginModal();
+
+	useEffect(() => {
+		if (!loading && !user) {
+			openLoginModal();
+		}
+	}, [loading, user, openLoginModal]);
+
+	if (loading) return <FullPageLoader />;
+
+	if (!user) {
+		return <Navigate to="/shop" replace />;
+	}
+
+	return children;
+}

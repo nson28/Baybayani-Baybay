@@ -1,0 +1,195 @@
+import { useEffect, useState, useCallback, useRef } from "react";
+
+import { supabase } from "@/config/supabaseclient";
+import { ItemCard } from "@/model/ui/Customer/item_card";
+
+export const useFetchItemCardItems = (
+	activeCategories: string[], // category names
+	searchTerm: string | null,
+	sortOption: string = "name_asc",
+	itemsPerPage = 8,
+) => {
+	const [items, setItems] = useState<ItemCard[]>([]);
+	// Start true so the first paint never shows the infinite-scroll sentinel with
+	// loading still false — otherwise IntersectionObserver can fire in the same
+	// tick as fetchItems(0) and race loadMore() (stale closure sees !loading).
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState<string | null>(null);
+	const [hasMore, setHasMore] = useState(true);
+	const pageRef = useRef(0);
+	const loadMoreInFlightRef = useRef(false);
+
+	const fetchItems = useCallback(
+		async (pageNum = 0, reset = false) => {
+			if (reset) {
+				pageRef.current = 0;
+			}
+			setLoading(true);
+			setError(null);
+
+			const from = pageNum * itemsPerPage;
+			const to = from + itemsPerPage - 1;
+
+			try {
+				// Step 1: Get category IDs if activeCategories are specified
+				let categoryIds: string[] = [];
+
+				if (activeCategories.length > 0) {
+					const { data: categories, error: catError } = await supabase
+						.from("Category")
+						.select("category_id")
+						.in("category_name", activeCategories)
+						.eq("is_soft_deleted", false);
+
+					if (catError) throw catError;
+					categoryIds = categories?.map((c) => c.category_id) ?? [];
+				}
+
+				// Step 2: Build query for items
+				let query = supabase
+					.from("Item")
+					.select(
+						`
+                        item_id,
+                        Tag(tag_name),
+                        Category(category_name),
+                        item_title,
+                        item_sold_by,
+                        Item_Image(item_image_url),
+                        Variant(
+                            variant_price_retail,
+                            is_soft_deleted,
+                            StockMovement ( 
+                                effective_stocks,
+                                created_at
+                            )
+                        )
+                    `,
+					)
+					.eq("is_soft_deleted", false);
+
+				// Step 3: Filter by category IDs if any
+				if (categoryIds.length > 0) {
+					query = query.in("category_id", categoryIds);
+				}
+
+				// Step 4: Filter by search term
+				if (searchTerm?.trim()) {
+					query = query.ilike("item_title", `%${searchTerm}%`);
+				}
+
+				// Step 5: Apply sorting
+				if (sortOption === "name_asc") {
+					query = query.order("item_title", { ascending: true });
+				} else if (sortOption === "name_desc") {
+					query = query.order("item_title", { ascending: false });
+				} else {
+					// Default sorting
+					query = query.order("item_title", { ascending: true });
+				}
+
+				query = query.range(from, to).order("created_at", {
+					referencedTable: "Variant.StockMovement",
+					ascending: false,
+				});
+
+				const { data: rawData, error: itemError } = await query;
+
+				if (itemError) throw itemError;
+
+				// Step 5: Map result to ItemCard and filter by stock
+				const mapped: ItemCard[] = (rawData ?? [])
+					.map((row: any) => {
+						const variants = (row.Variant ?? []).filter(
+							(v: any) => !v.is_soft_deleted,
+						);
+
+						// Calculate total stock for this item
+						const totalStock = variants.reduce(
+							(sum: number, v: any) => {
+								const latestMovement =
+									v.StockMovement?.[0] ?? null;
+								return (
+									sum +
+									(latestMovement?.effective_stocks ?? 0)
+								);
+							},
+							0,
+						);
+
+						// Skip if no stock
+						if (totalStock <= 0) return null;
+
+						const firstVariant = variants[0];
+						if (!firstVariant?.variant_price_retail) return null;
+
+						return {
+							item_id: row.item_id,
+							item_category: row.Category?.category_name ?? "",
+							item_tag: row.Tag?.tag_name ?? null,
+							item_title: row.item_title,
+							item_sold_by: row.item_sold_by,
+							item_first_img:
+								row.Item_Image?.[0]?.item_image_url ?? "",
+							item_first_variant_retail_price: Number(
+								firstVariant.variant_price_retail,
+							),
+						};
+					})
+					.filter(Boolean) as ItemCard[];
+
+				setHasMore((rawData ?? []).length === itemsPerPage);
+
+				if (reset) {
+					setItems(mapped);
+				} else {
+					setItems((prev) => [...prev, ...mapped]);
+				}
+			} catch (err: any) {
+				setError(err.message);
+			} finally {
+				setLoading(false);
+			}
+		},
+		[activeCategories, searchTerm, sortOption, itemsPerPage],
+	);
+
+	// Reset items when filters change
+	useEffect(() => {
+		setItems([]);
+		setHasMore(true);
+		fetchItems(0, true);
+	}, [activeCategories, searchTerm, sortOption, fetchItems]);
+
+	useEffect(() => {
+		const handler = () => {
+			fetchItems(0, true);
+		};
+
+		window.addEventListener("baybayani:update-table", handler);
+
+		return () => {
+			window.removeEventListener("baybayani:update-table", handler);
+		};
+	}, [fetchItems]);
+
+	const loadMore = useCallback(async () => {
+		if (loading || !hasMore || loadMoreInFlightRef.current) return;
+		loadMoreInFlightRef.current = true;
+		const nextPage = pageRef.current + 1;
+		pageRef.current = nextPage;
+		try {
+			await fetchItems(nextPage, false);
+		} finally {
+			loadMoreInFlightRef.current = false;
+		}
+	}, [loading, hasMore, fetchItems]);
+
+	return {
+		items,
+		loading,
+		error,
+		loadMore,
+		hasMore,
+	};
+};

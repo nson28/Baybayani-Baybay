@@ -1,0 +1,228 @@
+import {
+	Navbar as HeroNavBar,
+	NavbarItem,
+	Link,
+	DropdownItem,
+	DropdownTrigger,
+	Dropdown,
+	DropdownMenu,
+	Avatar,
+	Badge,
+	Divider,
+} from "@heroui/react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { BaybayaniLogo, CartIcon, OrdersIcon } from "@/components/icons";
+import ThemeSwitcher from "@/components/navbar/themeSwitcher";
+import { useRealtimeUserCart } from "@/data/supabase/Customer/Cart/useRealtimeUserCart";
+import { useRealtimeReadyOrders } from "@/data/supabase/Customer/Orders/useRealtimeReadyOrders";
+import { useLoginModal } from "@/ContextProvider/LoginModalContext/LoginModalContext";
+import { SoloUserIcon } from "@/components/icons";
+import { UserProfile } from "@/model/userProfile";
+import { User as AuthUser } from "@supabase/supabase-js";
+
+export function NavbarMobile({
+	user,
+	profile,
+	handleSignOut,
+}: {
+	user: AuthUser | null;
+	profile: UserProfile | null;
+	handleSignOut: () => Promise<void>;
+}) {
+	const [active, setActive] = useState("");
+	const navigate = useNavigate();
+	const { cartItems } = useRealtimeUserCart(user?.id ?? null);
+	const cartCount = cartItems.length;
+	const { readyCount } = useRealtimeReadyOrders(user?.id ?? null);
+	const { openLoginModal } = useLoginModal();
+
+	return (
+		<HeroNavBar
+			disableScrollHandler
+			position="static"
+			className="justify-around py-2 shadow-md"
+		>
+			{/* Shop / Logo */}
+			<NavbarItem
+				className="flex flex-col items-center"
+				isActive={active === "Shop"}
+			>
+				<Link
+					className="flex flex-col items-center"
+					color="foreground"
+					onClick={(e) => {
+						e.preventDefault();
+						setActive("Shop");
+						navigate("/");
+					}}
+				>
+					<div className="w-8 h-8 flex items-center justify-center">
+						<BaybayaniLogo className="size-7" />
+					</div>
+					<span
+						className={`text-sm mt-1 ${active === "Shop" ? "font-bold" : "font-light"}`}
+					>
+						Shop
+					</span>
+				</Link>
+			</NavbarItem>
+
+			<Divider className="h-8 bg-gray-300" orientation="vertical" />
+			<NavbarItem
+				className="flex flex-col items-center"
+				isActive={active === "Orders"}
+			>
+				<Link
+					className="flex flex-col items-center"
+					color="foreground"
+					onClick={(e) => {
+						e.preventDefault();
+						if (!user) {
+							openLoginModal();
+							return;
+						}
+						setActive("Orders");
+						navigate("/orders");
+					}}
+				>
+					<div className="w-8 h-8 flex items-center justify-center relative">
+						{readyCount > 0 ? (
+							<Badge
+								className="absolute top-0 right-0 translate-x-1 -translate-y-1"
+								color="danger"
+								content={String(readyCount)}
+								shape="circle"
+								showOutline={false}
+								size="sm"
+							>
+								<OrdersIcon className="w-6 h-6" />
+							</Badge>
+						) : (
+							<OrdersIcon className="w-6 h-6" />
+						)}
+					</div>
+					<span
+						className={`text-sm mt-1 ${active === "Orders" ? "font-bold" : "font-light"}`}
+					>
+						Orders
+					</span>
+				</Link>
+			</NavbarItem>
+			<Divider className="h-8 bg-gray-300" orientation="vertical" />
+
+			{/* Cart */}
+			<NavbarItem
+				className="flex flex-col items-center"
+				isActive={active === "Cart"}
+			>
+				<Link
+					className="flex flex-col items-center"
+					color="foreground"
+					onClick={(e) => {
+						e.preventDefault();
+						if (!user) {
+							openLoginModal();
+							return;
+						}
+						setActive("Cart");
+						navigate("/cart");
+					}}
+				>
+					<div className="w-8 h-8 flex items-center justify-center relative">
+						{cartCount > 0 ? (
+							<Badge
+								className="absolute top-0 right-0 translate-x-1 -translate-y-1"
+								color="danger"
+								content={String(cartCount)}
+								shape="circle"
+								showOutline={false}
+								size="sm"
+							>
+								<CartIcon className="w-6 h-6" />
+							</Badge>
+						) : (
+							<CartIcon className="w-6 h-6" />
+						)}
+					</div>
+					<span
+						className={`text-sm mt-1 ${active === "Cart" ? "font-bold" : "font-light"}`}
+					>
+						Cart
+					</span>
+				</Link>
+			</NavbarItem>
+
+			<Divider className="h-8 bg-gray-300" orientation="vertical" />
+
+			{/* Profile / Log In */}
+			<NavbarItem className="flex flex-col items-center">
+				{user ? (
+					<Dropdown placement="bottom-end">
+						<DropdownTrigger>
+							<div className="flex flex-col items-center cursor-pointer">
+								<div className="w-8 h-8 flex items-center justify-center">
+									<Avatar
+										isBordered
+										as="button"
+										color="success"
+										size="sm"
+										src={profile?.user_profile_img_url}
+									/>
+								</div>
+								<span className="text-sm font-light mt-1">
+									Profile
+								</span>
+							</div>
+						</DropdownTrigger>
+
+						<DropdownMenu
+							aria-label="Profile Actions"
+							variant="flat"
+						>
+							<DropdownItem key="profile" className="h-14 gap-2">
+								<p className="font-semibold">Signed in as</p>
+								<p className="font-semibold">
+									{profile?.user_name}
+								</p>
+							</DropdownItem>
+							<DropdownItem key="theme">
+								<div className="flex flex-row w-full justify-between">
+									<span className="font-semibold">
+										Dark mode
+									</span>
+									<ThemeSwitcher />
+								</div>
+							</DropdownItem>
+
+							<DropdownItem
+								key="settings"
+								onPress={() => navigate("/settings")}
+							>
+								Settings
+							</DropdownItem>
+							<DropdownItem
+								key="logout"
+								color="danger"
+								onPress={handleSignOut}
+							>
+								Log Out
+							</DropdownItem>
+						</DropdownMenu>
+					</Dropdown>
+				) : (
+					<div
+						className="flex flex-col items-center cursor-pointer"
+						onClick={openLoginModal}
+					>
+						<div className="w-8 h-8 flex items-center justify-center">
+							<SoloUserIcon className="w-6 h-6" />
+						</div>
+						<span className="text-sm font-light mt-1">Log In</span>
+					</div>
+				)}
+			</NavbarItem>
+		</HeroNavBar>
+	);
+}
