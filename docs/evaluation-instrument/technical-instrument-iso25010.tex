@@ -1,0 +1,363 @@
+% ---------------------------------------------------------------
+% Baybayani Technical Evaluation Instrument
+% Product quality, based on ISO/IEC 25010:2023
+% Respondents: technical stakeholders (developers, testers and
+% system architects).
+% Build: pdflatex technical-instrument-iso25010.tex (run twice)
+% ---------------------------------------------------------------
+\documentclass[10pt]{article}
+\input{study-info}
+\usepackage{instrument}
+
+\renewcommand{\InstrumentShortName}{Technical Evaluation (ISO/IEC 25010:2023)}
+
+\begin{document}
+
+\InstrumentTitle{Technical Evaluation Instrument}%
+  {Product Quality of the \SystemName{} System, based on ISO/IEC 25010:2023\\
+   For developers, testers and system architects}
+
+% ===============================================================
+\PartHeading{Part I. Informed Consent and Data Privacy Notice}
+
+Faculty researchers of the \Department{} of \University{} are evaluating the
+product quality of \SystemName, the farm-to-table ordering system of the research
+project named above. We are asking you, as a technical stakeholder, to rate the
+system against the nine product quality characteristics of ISO/IEC 25010:2023,
+based on your own review, testing or analysis.
+
+\begin{itemize}
+  \item \textbf{Voluntary.} Taking part is voluntary. You may skip any item or stop at
+    any time.
+  \item \textbf{Time.} Rating takes about 30 to 45 minutes after you have reviewed or
+    tested the system.
+  \item \textbf{Confidentiality.} Your name appears only on this page, which is filed
+    separately from your ratings. Ratings are identified only by a respondent number
+    and are reported as group summaries.
+  \item \textbf{Data privacy.} Your information is collected, stored and used only for
+    this evaluation, in line with the Data Privacy Act of 2012 (Republic Act
+    No.~10173). Only the researchers can access it, and it is disposed of securely
+    once the project is completed.
+  \item \textbf{Confidential material.} Access to the source code, builds and test
+    accounts is given only for this evaluation. Please do not copy, share or keep
+    them after the evaluation.
+\end{itemize}
+
+For questions about this evaluation, approach any of the researchers at the
+\Department, \University.
+
+\vspace{4pt}
+\opt{} I have read and understood this notice, and I agree to take part.
+
+\vspace{0.9cm}
+\noindent
+\begin{tabular}{@{}p{8.6cm}@{\hspace{1cm}}p{5cm}@{}}
+  \rule{\linewidth}{0.4pt} & \rule{\linewidth}{0.4pt}\\
+  \small Signature over printed name & \small Date
+\end{tabular}
+
+\clearpage
+% ===============================================================
+\PartHeading{Part II. Evaluator Profile}
+
+Tick (\checkmark) the box that applies.
+
+{\small
+\renewcommand{\arraystretch}{1.55}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{5.1cm}|X|}
+\hline
+\textbf{1. Primary role} &
+  \opt{Software developer} \opt{Software tester / QA} \opt{System architect}
+  \opt{Other: \blank[3cm]}\\ \hline
+\textbf{2. Affiliation} &
+  \opt{Academe (faculty)} \opt{Industry} \opt{Government}
+  \opt{Other: \blank[3cm]}\\ \hline
+\textbf{3. Years of professional experience in the role} &
+  \opt{Less than 1} \opt{1--3} \opt{4--6} \opt{7--10} \opt{More than 10}\\ \hline
+\textbf{4. Involvement in developing \SystemName} &
+  \opt{None} \opt{Consulted or reviewed during development}
+  \opt{Member of the development team}\\ \hline
+\textbf{5. Familiarity with the technologies used}\newline
+  {\footnotesize (N = none, B = basic, P = proficient)} &
+  \renewcommand{\arraystretch}{1.2}%
+  \begin{tabular}[t]{@{}l@{\hspace{1.2em}}l@{}}
+  React and TypeScript                  & \opt{N} \opt{B} \opt{P}\\
+  Supabase / PostgreSQL (RLS, Realtime) & \opt{N} \opt{B} \opt{P}\\
+  Capacitor / Android                   & \opt{N} \opt{B} \opt{P}\\
+  Web security and testing practice     & \opt{N} \opt{B} \opt{P}\\
+  \end{tabular}\\ \hline
+\textbf{6. How you evaluated the system}\newline
+  {\footnotesize (tick all that apply)} &
+  \opt{Hands-on use of the web app} \opt{Hands-on use of the Android app}
+  \opt{Source code review} \opt{Database schema and access-policy review}
+  \opt{Functional or exploratory testing} \opt{Performance or load testing}
+  \opt{Security testing} \opt{Architecture or documentation review}\\ \hline
+\end{tabularx}}
+
+\vspace{6pt}
+\textbf{Evaluation environment} (filled in by the evaluator or the researchers)
+
+{\small
+\renewcommand{\arraystretch}{1.55}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{5.1cm}|X|}
+\hline
+Version evaluated (Git commit or release) & \\ \hline
+Web URL tested & \\ \hline
+Android device and version tested & \\ \hline
+Browsers and devices tested & \\ \hline
+Test accounts used & \opt{Customer} \opt{Administrator}\\ \hline
+Evaluation date(s) & \\ \hline
+\end{tabularx}}
+
+% ===============================================================
+\PartHeading{Part III. Product Quality Evaluation}
+
+\textbf{Directions.} Rate each statement according to the evidence you gathered
+from your review or testing. Shade or tick (\checkmark) one circle per item. Where a
+rating is based on a specific observation (a test case, a file, a screen, a log),
+note it in the observation box below the characteristic, especially for ratings of
+2 or lower.
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|l|c|}
+\hline
+\rowcolor{headshade}
+\textbf{Rating} & \textbf{Code} & \textbf{Description} & \textbf{Mean range}\\ \hline
+5 & SA & Strongly Agree    & 4.21--5.00\\ \hline
+4 & A  & Agree             & 3.41--4.20\\ \hline
+3 & N  & Neutral           & 2.61--3.40\\ \hline
+2 & D  & Disagree          & 1.81--2.60\\ \hline
+1 & SD & Strongly Disagree & 1.00--1.80\\ \hline
+\end{tabular}\\[2pt]
+{\footnotesize The mean range is used by the researchers to interpret the results.}
+\end{minipage}
+\end{center}
+
+\StartNumbering{}
+
+% ---------------------------------------------------------------
+\Characteristic{1. Functional Suitability}{The degree to which the system provides
+  functions that meet the stated and implied needs of its users.}
+\begin{ratingtable}
+\SubChar{1.1 Functional completeness}
+\EnItem{The customer functions cover the intended tasks: sign-up with valid-ID upload,
+  browsing and search, cart, checkout, order tracking and cancellation, chat,
+  announcements and profile settings.}
+\EnItem{The administrator functions cover the intended tasks: products and variants,
+  stock movements, order processing (including walk-in orders), user approval,
+  announcements, store hours, dashboard and report export.}
+\SubChar{1.2 Functional correctness}
+\EnItem{Computed values are correct: cart and order totals, retail and wholesale
+  pricing, and dashboard revenue and order figures.}
+\EnItem{Stock levels stay consistent with recorded movements after sales, losses,
+  acquisitions, adjustments and cancellation restocks.}
+\EnItem{Orders keep the variant and price at the time of purchase even when the product
+  is later edited or its price changes.}
+\SubChar{1.3 Functional appropriateness}
+\EnItem{Each function achieves its task without unnecessary steps or screens.}
+\end{ratingtable}
+\CommentBox[2]{Observations and evidence:}
+
+% ---------------------------------------------------------------
+\Characteristic{2. Performance Efficiency}{The degree to which the system performs
+  its functions within specified time and throughput, and uses resources
+  efficiently, under the stated conditions.}
+\begin{ratingtable}
+\SubChar{2.1 Time behaviour}
+\EnItem{Pages, product searches and order actions respond within acceptable time on
+  typical mobile and Wi-Fi connections.}
+\EnItem{Real-time updates (chat messages, order status, notifications) appear without
+  noticeable delay.}
+\SubChar{2.2 Resource utilization}
+\EnItem{The apps use device memory, battery, storage and mobile data reasonably (e.g.,
+  compressed images, lazy-loaded pages, paginated lists).}
+\EnItem{Database queries and realtime subscriptions fetch only the data a screen
+  needs.}
+\SubChar{2.3 Capacity}
+\EnItem{The system handles the expected number of products, users and concurrent
+  orders (e.g., peak ordering before closing time) without degradation.}
+\end{ratingtable}
+\CommentBox[2]{Observations and evidence:}
+
+% ---------------------------------------------------------------
+\Characteristic{3. Compatibility}{The degree to which the system can exchange
+  information with other systems and perform its functions while sharing the same
+  environment and resources.}
+\begin{ratingtable}
+\SubChar{3.1 Co-existence}
+\EnItem{The Android app and the web app run alongside other applications on the same
+  device without conflicts or adverse effects.}
+\SubChar{3.2 Interoperability}
+\EnItem{The system exchanges data correctly with its external services: Supabase
+  Auth, Storage and Realtime, and Firebase Cloud Messaging.}
+\EnItem{Reports exported to Excel open correctly and contain the expected data.}
+\EnItem{The web and Android clients show the same data for the same account at the
+  same time.}
+\end{ratingtable}
+\CommentBox[2]{Observations and evidence:}
+
+% ---------------------------------------------------------------
+\Characteristic{4. Interaction Capability}{The degree to which the intended users
+  can interact with the system to complete their tasks, through its user interface.}
+\begin{ratingtable}
+\SubChar{4.1 Appropriateness recognizability}
+\EnItem{Users can tell from the interface whether the system fits their needs (e.g.,
+  the shop, cart and admin sections are clear from first use).}
+\SubChar{4.2 Learnability}
+\EnItem{New customers and administrators can learn the main tasks in a short time
+  without formal training.}
+\SubChar{4.3 Operability}
+\EnItem{Controls are easy to operate on both the mobile and desktop layouts.}
+\SubChar{4.4 User error protection}
+\EnItem{Input validation, confirmation dialogs, unsaved-changes warnings and
+  insufficient-stock checks protect users from making errors.}
+\SubChar{4.5 User engagement}
+\EnItem{The interface is attractive and encourages continued use.}
+\SubChar{4.6 Inclusivity}
+\EnItem{The system can be used by people of different ages, backgrounds and levels of
+  digital experience, including farmers and small food businesses.}
+\SubChar{4.7 User assistance}
+\EnItem{The system supports users with different abilities (e.g., readable text
+  sizes, colour contrast, light and dark themes, labels for screen readers, adequate
+  touch targets).}
+\SubChar{4.8 Self-descriptiveness}
+\EnItem{Status labels, empty states, error messages and notifications make the
+  system's state and next steps clear without a manual.}
+\end{ratingtable}
+\CommentBox[2]{Observations and evidence:}
+
+% ---------------------------------------------------------------
+\Characteristic{5. Reliability}{The degree to which the system performs its
+  functions without failure under specified conditions for a specified period.}
+\begin{ratingtable}
+\SubChar{5.1 Faultlessness}
+\EnItem{The system performs its functions without errors or crashes under normal
+  operation.}
+\SubChar{5.2 Availability}
+\EnItem{The system is up and reachable whenever customers and administrators need it.}
+\SubChar{5.3 Fault tolerance}
+\EnItem{The system keeps working, with clear messages, when the network drops or a
+  request to the backend fails; no partial orders are created.}
+\SubChar{5.4 Recoverability}
+\EnItem{After an interruption, the system restores the user's session, cart and data
+  (e.g., the server-side cart, re-login, pull-to-refresh).}
+\EnItem{Data can be restored from backups if the database is lost or corrupted.}
+\end{ratingtable}
+\CommentBox[2]{Observations and evidence:}
+
+% ---------------------------------------------------------------
+\Characteristic{6. Security}{The degree to which the system protects information and
+  data so that people and other systems have access appropriate to their
+  authorization, and defends against attack.}
+\begin{ratingtable}
+\SubChar{6.1 Confidentiality}
+\EnItem{Users can access only data they are authorized to see (e.g., customers see
+  only their own orders, cart and chats; valid-ID images are not publicly
+  accessible).}
+\EnItem{Row-level security policies are enabled on every table that holds user or
+  business data.}
+\SubChar{6.2 Integrity}
+\EnItem{Prices, stock, order status and user roles cannot be changed by unauthorized
+  users, including through direct API calls with the public key.}
+\SubChar{6.3 Non-repudiation}
+\EnItem{Orders, stock movements and status changes are recorded with timestamps so that
+  they can be proven to have taken place.}
+\SubChar{6.4 Accountability}
+\EnItem{Administrative actions (stock adjustments, order status changes, user
+  approvals) can be traced to the account that performed them.}
+\SubChar{6.5 Authenticity}
+\EnItem{User identity is verified through authentication, email verification, password
+  reset and administrator approval of new accounts.}
+\SubChar{6.6 Resistance}
+\EnItem{The system resists common attacks (e.g., injection, cross-site scripting,
+  brute-force login, exposure of secret keys in the client or repository).}
+\end{ratingtable}
+\CommentBox[2]{Observations and evidence:}
+
+% ---------------------------------------------------------------
+\Characteristic{7. Maintainability}{The degree to which the system can be modified
+  effectively and efficiently by its intended maintainers.}
+\begin{ratingtable}
+\SubChar{7.1 Modularity}
+\EnItem{The code is organized into separate parts (pages, components, data hooks,
+  models, route guards) so that a change to one has little effect on others.}
+\SubChar{7.2 Reusability}
+\EnItem{Components, hooks and utilities are reused rather than duplicated.}
+\SubChar{7.3 Analysability}
+\EnItem{The causes of defects and the effects of a planned change can be found easily
+  (readable code, TypeScript types, linting, README documentation).}
+\SubChar{7.4 Modifiability}
+\EnItem{Features can be changed or added without introducing defects or lowering
+  quality.}
+\SubChar{7.5 Testability}
+\EnItem{Test criteria can be set and tests run effectively (e.g., automated tests,
+  test data, separate test environment).}
+\end{ratingtable}
+\CommentBox[2]{Observations and evidence:}
+
+% ---------------------------------------------------------------
+\Characteristic{8. Flexibility}{The degree to which the system can be adapted to
+  changes in its requirements, contexts of use or system environment.}
+\begin{ratingtable}
+\SubChar{8.1 Adaptability}
+\EnItem{The system works across supported browsers, Android versions and screen
+  sizes.}
+\SubChar{8.2 Scalability}
+\EnItem{The system can handle growth in products, users, orders or additional sellers
+  by scaling its resources.}
+\SubChar{8.3 Installability}
+\EnItem{The Android APK installs, updates and uninstalls cleanly, and the web app can
+  be built and deployed by following the README.}
+\SubChar{8.4 Replaceability}
+\EnItem{The system can replace the current manual, paper or social-media ordering
+  process for the same purpose.}
+\end{ratingtable}
+\CommentBox[2]{Observations and evidence:}
+
+% ---------------------------------------------------------------
+\Characteristic{9. Safety}{The degree to which the system, under defined conditions,
+  avoids states that put human life, health, property or the environment at risk.
+  For this system, the items address harm to the farmer group's stock, orders,
+  money and records.}
+\begin{ratingtable}
+\SubChar{9.1 Operational constraint}
+\EnItem{The system keeps operations within safe limits (e.g., no ordering beyond
+  available stock, no negative stock, no ordering outside store hours).}
+\SubChar{9.2 Risk identification}
+\EnItem{The system identifies conditions that could cause loss (e.g., low-stock
+  alerts, insufficient-stock detection, orders affected by closing time).}
+\SubChar{9.3 Fail safe}
+\EnItem{When an operation fails, the system leaves data in a safe state (e.g., a failed
+  checkout neither creates an order nor deducts stock).}
+\SubChar{9.4 Hazard warning}
+\EnItem{The system warns users before actions that are hard to undo (e.g., deleting a
+  product or variant, cancelling an order, adjusting stock, closing with unsaved
+  changes).}
+\SubChar{9.5 Safe integration}
+\EnItem{Integrated services (push notifications, edge functions, Excel export) do not
+  expose data or leave the system in an inconsistent state.}
+\end{ratingtable}
+\CommentBox[2]{Observations and evidence:}
+
+% ===============================================================
+\par\noindent\begin{minipage}{\linewidth}
+\PartHeading{Part IV. Overall Assessment}
+
+\CommentBox[3]{1. What are the strengths of \SystemName{} as a product?}
+\vspace{4pt}
+\CommentBox[3]{2. What defects or risks did you find? Give the steps to reproduce,
+  the file or the screen where possible.}
+\vspace{4pt}
+\CommentBox[3]{3. What do you recommend before wider deployment?}
+
+\vspace{10pt}
+\begin{center}
+\textbf{Thank you for your time and expert assessment.}
+\end{center}
+\end{minipage}
+
+\end{document}

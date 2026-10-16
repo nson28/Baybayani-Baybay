@@ -1,0 +1,360 @@
+% ---------------------------------------------------------------
+% Baybayani User Evaluation Instrument
+% Quality in use, based on ISO/IEC 25019:2023
+% Respondents: customers and farmer-group administrators who were
+% not part of the system's development.
+% Build: pdflatex user-instrument-iso25019.tex (run twice)
+% ---------------------------------------------------------------
+\documentclass[10pt]{article}
+\input{study-info}
+\usepackage{instrument}
+
+\renewcommand{\InstrumentShortName}{User Evaluation (ISO/IEC 25019:2023)}
+\renewcommand{\StatementHeader}{Statement \textit{/ Pahayag}}
+
+% Cebuano line under an English line
+\newcommand{\ceb}[1]{{\itshape\color{black!75}#1}}
+
+\begin{document}
+
+\InstrumentTitle{User Evaluation Instrument}%
+  {Quality in Use of the \SystemName{} System, based on ISO/IEC 25019:2023\\
+   \ceb{Pagtimbang-timbang sa Kalidad sa Paggamit sa \SystemName}}
+
+% ===============================================================
+\PartHeading{Part I. Informed Consent and Data Privacy Notice\\
+  \ceb{\normalsize Bahin I. Pagtugot ug Pahibalo bahin sa Pribasiya sa Datos}}
+
+Faculty researchers of the \Department{} of \University{} are evaluating
+\SystemName, the farm-to-table ordering system of the research project
+named above. We are asking you, as a user of the system, to rate how well it
+serves you in your actual use.
+
+\ceb{Ang mga magtutudlo-tigdukiduki sa \Department{} sa \University{} nagtimbang-timbang
+sa \SystemName, ang farm-to-table nga sistema sa pag-order sa maong research
+project. Gihangyo ka namo, isip usa ka naggamit sa sistema, nga hatagan og
+grado kung unsa ka maayo ang pagserbisyo niini kanimo sa imong tinuod nga paggamit.}
+
+\begin{itemize}
+  \item \textbf{Voluntary.} Taking part is voluntary. You may skip any question or
+    stop at any time without any effect on your use of \SystemName.\\
+    \ceb{Boluntaryo ang pag-apil. Mahimo nimong lakawan ang bisan unsang pangutana o
+    mohunong bisan kanus-a nga walay epekto sa imong paggamit sa \SystemName.}
+  \item \textbf{Time.} Answering takes about 15 to 20 minutes.\\
+    \ceb{Mga 15 ngadto sa 20 ka minuto ang pagtubag.}
+  \item \textbf{Confidentiality.} Your name appears only on this page. This page is
+    filed separately from your answers, which are identified only by a respondent
+    number. Results are reported only as group summaries.\\
+    \ceb{Kining panid lang ang adunay imong ngalan. Ibulag kini sa imong mga tubag,
+    nga mailhan lang pinaagi sa respondent number. Ang mga resulta ireport lang
+    isip katingban sa tanan.}
+  \item \textbf{Data privacy.} Your information is collected, stored and used only for
+    this evaluation, in line with the Data Privacy Act of 2012 (Republic Act
+    No.~10173). Only the researchers can access it, and it is disposed of securely
+    once the project is completed.\\
+    \ceb{Ang imong impormasyon kolektahon, tipigan, ug gamiton lang alang niining
+    pagtimbang-timbang, subay sa Data Privacy Act of 2012 (Republic Act No.~10173).
+    Ang mga tigdukiduki lang ang maka-access niini, ug luwas kining labayon
+    human mahuman ang proyekto.}
+  \item \textbf{Eligibility.} Respondents must be 18 years old or older and must not
+    have taken part in developing \SystemName.\\
+    \ceb{Ang mga motubag kinahanglan 18 anyos pataas ug wala miapil sa paghimo sa \SystemName.}
+\end{itemize}
+
+For questions about this evaluation, approach any of the researchers at the
+\Department, \University.\\
+\ceb{Alang sa mga pangutana bahin niining pagtimbang-timbang, duol sa bisan kinsa sa
+mga tigdukiduki sa \Department, \University.}
+
+\vspace{4pt}
+\opt{} I have read and understood this notice, and I agree to take part.\\
+\hspace*{2.6ex}\ceb{Nabasa ug nasabtan nako kini nga pahibalo, ug mouyon ko nga moapil.}
+
+\vspace{0.9cm}
+\noindent
+\begin{tabular}{@{}p{8.6cm}@{\hspace{1cm}}p{5cm}@{}}
+  \rule{\linewidth}{0.4pt} & \rule{\linewidth}{0.4pt}\\
+  \small Signature over printed name \ceb{/ Pirma ibabaw sa ngalan} &
+  \small Date \ceb{/ Petsa}
+\end{tabular}
+
+\clearpage
+% ===============================================================
+\PartHeading{Part II. Respondent Profile\\
+  \ceb{\normalsize Bahin II. Profile sa Motubag}}
+
+Tick (\checkmark) the box that applies. \ceb{Butangi og tsek (\checkmark) ang kahon nga angay.}
+
+{\small
+\renewcommand{\arraystretch}{1.55}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{5.1cm}|X|}
+\hline
+\textbf{1. Role in \SystemName}\newline\ceb{Papel sa \SystemName} &
+  \opt{Customer \ceb{(Kustomer)}}
+  \opt{Administrator / farmer-group staff \ceb{(Administrador / kawani sa grupo sa mag-uuma)}}\\ \hline
+\textbf{2. Type of customer}\newline\ceb{Klase sa kustomer}\newline{\footnotesize (customers only \ceb{/ kustomer lang})} &
+  \opt{Individual or household \ceb{(Indibidwal o panimalay)}}
+  \opt{Food business establishment, e.g.\ restaurant, eatery, carinderia \ceb{(Negosyo sa pagkaon)}}
+  \opt{Reseller or retailer \ceb{(Tigbaligya pag-usab)}}
+  \opt{Other \ceb{(Uban pa)}: \blank[2.6cm]}\\ \hline
+\textbf{3. Age}\newline\ceb{Edad} &
+  \opt{18--24} \opt{25--34} \opt{35--44} \opt{45--54} \opt{55--64} \opt{65 and above \ceb{(pataas)}}\\ \hline
+\textbf{4. Sex}\newline\ceb{Sekso} &
+  \opt{Male \ceb{(Lalaki)}} \opt{Female \ceb{(Babaye)}} \opt{Prefer not to say \ceb{(Dili gusto mosulti)}}\\ \hline
+\textbf{5. How you use \SystemName}\newline\ceb{Unsaon nimo paggamit ang \SystemName}\newline{\footnotesize (tick all that apply \ceb{/ tsek tanan nga angay})} &
+  \opt{Android app} \opt{Web browser on a phone \ceb{(browser sa cellphone)}}
+  \opt{Web browser on a computer \ceb{(browser sa computer)}}\\ \hline
+\textbf{6. How long you have used it}\newline\ceb{Unsa na kadugay nimo kini gigamit} &
+  \opt{Less than 1 month \ceb{(Ubos sa 1 ka bulan)}} \opt{1--3 months \ceb{(bulan)}}
+  \opt{4--6 months \ceb{(bulan)}} \opt{More than 6 months \ceb{(Labaw sa 6 ka bulan)}}\\ \hline
+\textbf{7. How often you use it}\newline\ceb{Unsa ka sagad nimo kini gamiton} &
+  \opt{Daily \ceb{(Adlaw-adlaw)}} \opt{A few times a week \ceb{(Pipila ka higayon sa usa ka semana)}}
+  \opt{Weekly \ceb{(Kada semana)}} \opt{Less than weekly \ceb{(Dili kada semana)}}\\ \hline
+\textbf{8. Online shopping or ordering before \SystemName}\newline\ceb{Online nga pagpalit o pag-order sa wala pa ang \SystemName} &
+  \opt{Never \ceb{(Wala gyud)}} \opt{Sometimes \ceb{(Usahay)}} \opt{Often \ceb{(Kanunay)}}\\ \hline
+\textbf{9. What you have done in \SystemName}\newline\ceb{Unsa na ang imong nabuhat sa \SystemName}\newline{\footnotesize (tick all that apply \ceb{/ tsek tanan nga angay})} &
+  \renewcommand{\arraystretch}{1.15}%
+  \begin{tabular}[t]{@{}p{0.47\linewidth}@{\hspace{0.03\linewidth}}p{0.47\linewidth}@{}}
+  \multicolumn{2}{@{}l}{\textit{Customers \ceb{/ Kustomer}:}}\\
+  \opt{Signed up \ceb{(Nag-sign up)}} & \opt{Browsed or searched products \ceb{(Nangita og produkto)}}\\
+  \opt{Used the cart \ceb{(Migamit sa cart)}} & \opt{Placed an order \ceb{(Nag-order)}}\\
+  \opt{Tracked an order \ceb{(Nagsubay sa order)}} & \opt{Cancelled an order \ceb{(Nagkansela og order)}}\\
+  \opt{Chatted with the store \ceb{(Nakig-chat sa tindahan)}} & \opt{Read announcements \ceb{(Nagbasa sa pahibalo)}}\\
+  \opt{Updated my profile \ceb{(Nag-update sa profile)}} & \\[3pt]
+  \multicolumn{2}{@{}l}{\textit{Administrators \ceb{/ Administrador}:}}\\
+  \opt{Managed products and variants \ceb{(Nagdumala sa produkto ug variant)}} &
+  \opt{Adjusted or recorded stock \ceb{(Nag-adjust o nagrekord sa stock)}}\\
+  \opt{Processed orders \ceb{(Nagproseso sa order)}} &
+  \opt{Entered walk-in orders \ceb{(Nag-encode og walk-in nga order)}}\\
+  \opt{Approved user accounts \ceb{(Nag-aprobar og account)}} &
+  \opt{Posted announcements \ceb{(Nag-post og pahibalo)}}\\
+  \opt{Changed store hours \ceb{(Nag-usab sa oras sa tindahan)}} &
+  \opt{Replied to chats \ceb{(Mitubag sa chat)}}\\
+  \opt{Viewed the dashboard or exported reports \ceb{(Mitan-aw sa dashboard o nag-export og report)}} & \\
+  \end{tabular}\\ \hline
+\end{tabularx}}
+
+% ===============================================================
+\PartHeading{Part III. Quality-in-Use Evaluation\\
+  \ceb{\normalsize Bahin III. Pagtimbang-timbang sa Kalidad sa Paggamit}}
+
+\textbf{Directions.} Read each statement and shade or tick (\checkmark) the circle
+that best matches your own experience of using \SystemName. There are no right or
+wrong answers. Answer Part~III-A, then the part for your role: Part~III-B if you
+are a customer, Part~III-C if you are an administrator.\\
+\ceb{\textbf{Giya.} Basaha ang matag pahayag ug lim-i o tsek-i (\checkmark) ang lingin nga
+labing mohaum sa imong kaugalingong kasinatian sa paggamit sa \SystemName. Walay
+husto o sayop nga tubag. Tubaga ang Bahin~III-A, dayon ang bahin para sa imong
+papel: Bahin~III-B kung kustomer ka, Bahin~III-C kung administrador ka.}
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|l|l|c|}
+\hline
+\rowcolor{headshade}
+\textbf{Rating} & \textbf{Code} & \textbf{Description} & \ceb{\textbf{Kahulugan}} & \textbf{Mean range}\\ \hline
+5 & SA & Strongly Agree    & \ceb{Uyon kaayo}     & 4.21--5.00\\ \hline
+4 & A  & Agree             & \ceb{Uyon}           & 3.41--4.20\\ \hline
+3 & N  & Neutral           & \ceb{Dili sigurado}  & 2.61--3.40\\ \hline
+2 & D  & Disagree          & \ceb{Dili uyon}      & 1.81--2.60\\ \hline
+1 & SD & Strongly Disagree & \ceb{Dili gyud uyon} & 1.00--1.80\\ \hline
+\end{tabular}\\[2pt]
+{\footnotesize The mean range is used by the researchers to interpret the results.
+\ceb{Gamiton sa mga tigdukiduki ang mean range sa paghubad sa mga resulta.}}
+\end{minipage}
+\end{center}
+
+% ---------------------------------------------------------------
+\PartHeading{Part III-A. For All Respondents \ceb{\normalsize / Para sa Tanang Motubag}}
+\StartNumbering{A}
+
+\Characteristic{1. Beneficialness \ceb{/ Kapuslanan}}{How much you benefit from
+  using \SystemName: whether you can do what you need to do with it, whether people
+  with different needs can use it, and whether it fits the work it is used for.
+  \ceb{Unsa ka dako ang kaayohan nga imong makuha sa paggamit sa \SystemName.}}
+\begin{ratingtable}
+\SubChar{1.1 Usability \ceb{/ Kasayon sa paggamit}}
+\BiItem{I can complete what I need to do in \SystemName{} without help from others.}
+       {Mahimo nako ang akong kinahanglan buhaton sa \SystemName{} bisan walay tabang sa uban.}
+\BiItem{I can finish my tasks in \SystemName{} quickly and in a few steps.}
+       {Dali ra nako mahuman ang akong mga buluhaton sa \SystemName, sa pipila lang ka lakang.}
+\BiItem{The results I get are complete and correct (e.g., prices, quantities, order details).}
+       {Kompleto ug husto ang mga resulta nga akong makuha (pananglitan, presyo, gidaghanon, detalye sa order).}
+\BiItem{The screens, labels and buttons are easy to understand.}
+       {Sayon sabton ang mga screen, label, ug button.}
+\BiItem{I am satisfied with using \SystemName.}
+       {Kontento ko sa paggamit sa \SystemName.}
+\SubChar{1.2 Accessibility \ceb{/ Kaabot sa tanan}}
+\BiItem{The text, pictures and buttons are easy to read and see on my device.}
+       {Sayon basahon ug tan-awon ang mga sulat, hulagway, ug button sa akong device.}
+\BiItem{I can use \SystemName{} well on the device I have (phone app, phone browser or computer).}
+       {Magamit nako og maayo ang \SystemName{} sa device nga naa nako (app sa cellphone, browser sa cellphone, o computer).}
+\BiItem{\SystemName{} can be used even by people who are not used to apps or online shopping.}
+       {Magamit ang \SystemName{} bisan sa mga tawo nga dili anad sa mga app o online shopping.}
+\BiItem{I can set the display (e.g., light or dark mode) to what is comfortable for me.}
+       {Mausab nako ang hitsura (pananglitan, light o dark mode) sumala sa komportable para nako.}
+\SubChar{1.3 Suitability \ceb{/ Kaangayan}}
+\BiItem{\SystemName{} fits the way the farmer group sells and the way buyers buy produce.}
+       {Mohaum ang \SystemName{} sa paagi sa pagbaligya sa grupo sa mag-uuma ug sa paagi sa pagpalit sa mga mamalitay.}
+\BiItem{\SystemName{} works whenever I need it.}
+       {Molihok ang \SystemName{} matag higayon nga akong kinahanglanon.}
+\BiItem{\SystemName{} responds fast enough, even on mobile data.}
+       {Paspas igo ang tubag sa \SystemName, bisan sa mobile data.}
+\BiItem{Notifications and chat messages arrive on time.}
+       {Moabot sa saktong oras ang mga notification ug mensahe sa chat.}
+\end{ratingtable}
+\CommentBox[2]{Comments on beneficialness \ceb{/ Komento bahin sa kapuslanan}:}
+
+\Characteristic{2. Freedom from Risk \ceb{/ Kagawasan gikan sa Peligro}}{How well
+  \SystemName{} keeps you away from financial loss, harm to your health and safety,
+  and harm to the community and the environment.
+  \ceb{Unsa ka maayo nga gilikay ka sa \SystemName{} gikan sa kapildihan, kadaot sa
+  panglawas ug kaluwasan, ug kadaot sa komunidad ug kinaiyahan.}}
+\begin{ratingtable}
+\SubChar{2.1 Freedom from economic risk \ceb{/ Kagawasan gikan sa peligro sa kwarta}}
+\BiItem{The prices and amounts I see are the ones actually charged.}
+       {Ang presyo ug kantidad nga akong makita mao gyud ang sukton.}
+\BiItem{\SystemName{} helps me avoid losses from wrong prices, wrong quantities or lost orders.}
+       {Makatabang ang \SystemName{} nga malikayan nako ang kapildihan tungod sa sayop nga presyo, sayop nga gidaghanon, o nawala nga order.}
+\BiItem{Using \SystemName{} saves me time, fare or other costs.}
+       {Makadaginot ko og oras, pamasahe, o ubang gasto tungod sa \SystemName.}
+\SubChar{2.2 Freedom from health risk \ceb{/ Kagawasan gikan sa peligro sa panglawas}}
+\BiItem{Product information (photos, descriptions, availability) helps me get fresh, safe produce.}
+       {Ang impormasyon sa produkto (hulagway, deskripsyon, kung naa pa) makatabang nako nga makakuha og presko ug luwas nga produkto.}
+\BiItem{Using \SystemName{} does not cause me stress, eye strain or discomfort.}
+       {Ang paggamit sa \SystemName{} dili makahatag nako og stress, kakapoy sa mata, o kahasol.}
+\SubChar{2.3 Freedom from human life risk \ceb{/ Kagawasan gikan sa peligro sa kinabuhi}}
+\BiItem{\SystemName{} reduces my need to travel or wait in crowded places to buy or sell.}
+       {Makunhuran sa \SystemName{} ang akong panginahanglan nga mobiyahe o maghulat sa daghang tawo aron mopalit o mobaligya.}
+\BiItem{\SystemName{} never requires me to do anything that puts my personal safety at risk.}
+       {Wala gyud ko pugsa sa \SystemName{} nga mobuhat og bisan unsa nga makabutang sa akong kaluwasan sa peligro.}
+\SubChar{2.4 Freedom from environmental and societal risk \ceb{/ Kagawasan gikan sa peligro sa kinaiyahan ug katilingban}}
+\BiItem{\SystemName{} helps reduce wasted produce (e.g., unsold or spoiled goods).}
+       {Makatabang ang \SystemName{} sa pagkunhod sa nausik nga produkto (pananglitan, wala mabaligya o nadunot).}
+\BiItem{\SystemName{} supports local farmers and the community of Baybay City.}
+       {Gisuportahan sa \SystemName{} ang mga lokal nga mag-uuma ug ang komunidad sa Dakbayan sa Baybay.}
+\BiItem{\SystemName{} reduces paper use (e.g., handwritten orders, receipts and lists).}
+       {Makunhuran sa \SystemName{} ang paggamit og papel (pananglitan, sinulat nga order, resibo, ug lista).}
+\end{ratingtable}
+\CommentBox[2]{Comments on freedom from risk \ceb{/ Komento bahin sa kagawasan gikan sa peligro}:}
+
+\Characteristic{3. Acceptability \ceb{/ Kadawaton}}{How favourably you respond to
+  \SystemName: your experience with it over time, how far you trust it, and whether
+  it follows the rules that apply to it.
+  \ceb{Unsa ka maayo ang imong pagdawat sa \SystemName: ang imong kasinatian niini,
+  ang imong pagsalig niini, ug kung nagsunod kini sa mga lagda.}}
+\begin{ratingtable}
+\SubChar{3.1 Experience \ceb{/ Kasinatian}}
+\BiItem{My experience with \SystemName{} has been positive.}
+       {Maayo ang akong kasinatian sa \SystemName.}
+\BiItem{The more I use \SystemName, the easier it becomes.}
+       {Kon mas kanunay nako gamiton ang \SystemName, mas mosayon kini.}
+\BiItem{I will continue using \SystemName.}
+       {Padayon nakong gamiton ang \SystemName.}
+\BiItem{I would recommend \SystemName{} to others.}
+       {Irekomendar nako ang \SystemName{} sa uban.}
+\SubChar{3.2 Trustworthiness \ceb{/ Kasaligan}}
+\BiItem{I trust that \SystemName{} keeps my personal information, including my valid ID, safe.}
+       {Nagsalig ko nga luwas sa \SystemName{} ang akong personal nga impormasyon, lakip ang akong valid ID.}
+\BiItem{I trust that the orders, stock and records in \SystemName{} are accurate.}
+       {Nagsalig ko nga husto ang mga order, stock, ug rekord sa \SystemName.}
+\BiItem{\SystemName{} behaves the way I expect it to.}
+       {Molihok ang \SystemName{} sumala sa akong gipaabot.}
+\SubChar{3.3 Compliance \ceb{/ Pagsunod sa lagda}}
+\BiItem{I am confident that \SystemName{} handles personal data in line with the Data Privacy Act of 2012 (RA 10173).}
+       {Kumpiyansa ko nga gidumala sa \SystemName{} ang personal nga datos subay sa Data Privacy Act of 2012 (RA 10173).}
+\BiItem{\SystemName{} follows the farmer group's rules (e.g., store hours, account approval, order cancellation).}
+       {Gisunod sa \SystemName{} ang mga lagda sa grupo sa mag-uuma (pananglitan, oras sa tindahan, pag-aprobar sa account, pagkansela sa order).}
+\end{ratingtable}
+\CommentBox[2]{Comments on acceptability \ceb{/ Komento bahin sa kadawaton}:}
+
+% ---------------------------------------------------------------
+\PartHeading{Part III-B. For Customers Only \ceb{\normalsize / Para sa Kustomer Lang}}
+\StartNumbering{B}
+\begin{ratingtable}
+\SubChar{1. Beneficialness: usability and suitability \ceb{/ Kapuslanan: kasayon sa paggamit ug kaangayan}}
+\BiItem{I can easily find products using categories, tags and search.}
+       {Dali nakong makit-an ang mga produkto pinaagi sa kategorya, tag, ug search.}
+\BiItem{I can easily choose a product variant and quantity and add it to my cart.}
+       {Dali ra nako mapili ang variant ug gidaghanon sa produkto ug idugang kini sa akong cart.}
+\BiItem{I can easily review, edit and check out my cart.}
+       {Dali ra nako masusi, ma-edit, ug ma-check out ang akong cart.}
+\BiItem{I can easily follow the status of my order (Pending, Ready, Completed or Cancelled).}
+       {Dali ra nako masubay ang status sa akong order (Pending, Ready, Completed, o Cancelled).}
+\BiItem{Messaging the store through the chat is easy, and my concerns get answered.}
+       {Sayon ang pag-message sa tindahan pinaagi sa chat, ug matubag ang akong mga pangutana.}
+\BiItem{Announcements and store hours tell me what I can buy and when.}
+       {Ang mga pahibalo ug oras sa tindahan nagpahibalo nako kung unsa ang akong mapalit ug kanus-a.}
+\BiItem{Signing up and getting my account approved was straightforward.}
+       {Dili lisod ang pag-sign up ug ang pag-aprobar sa akong account.}
+\SubChar{2. Freedom from economic risk \ceb{/ Kagawasan gikan sa peligro sa kwarta}}
+\BiItem{Retail and wholesale prices are shown clearly before I order.}
+       {Klaro nga gipakita ang retail ug wholesale nga presyo sa dili pa ko mag-order.}
+\BiItem{I am told clearly when an item is out of stock or my order is cancelled, and why.}
+       {Klaro nga ipahibalo nako kung wala nay stock ang usa ka produkto o kung gikansela ang akong order, ug ngano.}
+\SubChar{3. Acceptability: experience \ceb{/ Kadawaton: kasinatian}}
+\BiItem{I prefer ordering through \SystemName{} to ordering in person, by text or by phone call.}
+       {Mas gusto nako ang pag-order pinaagi sa \SystemName{} kaysa personal, text, o tawag.}
+\end{ratingtable}
+\CommentBox[2]{Comments on ordering as a customer \ceb{/ Komento bahin sa pag-order isip kustomer}:}
+
+% ---------------------------------------------------------------
+\PartHeading{Part III-C. For Administrators Only \ceb{\normalsize / Para sa Administrador Lang}}
+\StartNumbering{C}
+\begin{ratingtable}
+\SubChar{1. Beneficialness: usability and suitability \ceb{/ Kapuslanan: kasayon sa paggamit ug kaangayan}}
+\BiItem{Adding and editing products, variants, prices and photos is easy.}
+       {Sayon ang pagdugang ug pag-edit sa mga produkto, variant, presyo, ug hulagway.}
+\BiItem{Processing orders, including walk-in orders, is quick and easy.}
+       {Paspas ug sayon ang pagproseso sa mga order, lakip ang mga walk-in nga order.}
+\BiItem{Reviewing and approving customer accounts, including their valid IDs, is easy.}
+       {Sayon ang pagsusi ug pag-aprobar sa mga account sa kustomer, lakip ang ilang valid ID.}
+\BiItem{Posting announcements and changing store hours is easy.}
+       {Sayon ang pag-post og pahibalo ug pag-usab sa oras sa tindahan.}
+\BiItem{The dashboard gives me the sales, order and customer information I need to make decisions.}
+       {Gihatag sa dashboard ang impormasyon bahin sa halin, order, ug kustomer nga akong kinahanglan sa paghimo og desisyon.}
+\BiItem{The stock records (acquisitions, sales, losses, restocks from cancellations) match the actual inventory.}
+       {Mohaum sa tinuod nga inventory ang mga rekord sa stock (acquisition, sale, loss, restock gikan sa kanselado).}
+\BiItem{Low-stock notifications help me restock in time.}
+       {Makatabang ang mga notification sa gamay na nga stock aron makapuno ko sa saktong panahon.}
+\SubChar{2. Freedom from economic risk \ceb{/ Kagawasan gikan sa peligro sa kwarta}}
+\BiItem{\SystemName{} helps the farmer group reduce losses from overselling, spoilage or recording errors.}
+       {Makatabang ang \SystemName{} sa grupo sa mag-uuma sa pagkunhod sa kapildihan tungod sa sobra nga pagbaligya, pagkadunot, o sayop sa pagrekord.}
+\BiItem{\SystemName{} warns me before actions that cannot easily be undone (e.g., deleting, cancelling, adjusting stock).}
+       {Gipasidan-an ko sa \SystemName{} sa dili pa ko mobuhat og aksyon nga dili dali mabawi (pananglitan, pagtangtang, pagkansela, pag-adjust sa stock).}
+\SubChar{3. Acceptability \ceb{/ Kadawaton}}
+\BiItem{Only authorized administrators can open the admin functions.}
+       {Ang mga awtorisado lang nga administrador ang makaabli sa mga admin function.}
+\BiItem{The reports exported from \SystemName{} are acceptable for the farmer group's records and reporting.}
+       {Madawat para sa mga rekord ug report sa grupo sa mag-uuma ang mga report nga gi-export gikan sa \SystemName.}
+\BiItem{\SystemName{} has made managing the farmer group's sales easier than before.}
+       {Mas nasayon ang pagdumala sa halin sa grupo sa mag-uuma tungod sa \SystemName{} kaysa kaniadto.}
+\end{ratingtable}
+\CommentBox[2]{Comments on managing the store as an administrator \ceb{/ Komento bahin sa pagdumala sa tindahan isip administrador}:}
+
+% ===============================================================
+% Part IV is kept on one page.
+\par\noindent\begin{minipage}{\linewidth}
+\PartHeading{Part IV. Comments and Suggestions\\
+  \ceb{\normalsize Bahin IV. Mga Komento ug Sugyot}}
+
+\CommentBox[3]{1. What did you like most about \SystemName?\\
+  \ceb{Unsa ang labing nimo nagustohan sa \SystemName?}}
+\vspace{4pt}
+\CommentBox[3]{2. What problems did you encounter while using it?\\
+  \ceb{Unsa nga mga problema ang imong nasugatan samtang gigamit kini?}}
+\vspace{4pt}
+\CommentBox[3]{3. What would you suggest to improve \SystemName?\\
+  \ceb{Unsa ang imong isugyot aron mapaayo ang \SystemName?}}
+
+\vspace{10pt}
+\begin{center}
+\textbf{Thank you for your time and honest answers.}\\
+\ceb{Daghang salamat sa imong panahon ug matinuoron nga mga tubag.}
+\end{center}
+\end{minipage}
+
+\end{document}

@@ -1,0 +1,165 @@
+% ---------------------------------------------------------------
+% instrument.sty
+% Shared page layout for the Baybayani evaluation instruments:
+% A4 page, VSU/DCST header, 5-point rating tables, check boxes,
+% profile tables and comment boxes.
+% Only packages shipped with MiKTeX and TeX Live are used.
+% ---------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{instrument}[2026/10/16 Baybayani evaluation instrument layout]
+
+\RequirePackage[a4paper,top=2.2cm,bottom=2cm,left=2cm,right=2cm,
+  headheight=15pt,headsep=0.5cm,footskip=1cm]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\RequirePackage{graphicx}
+\RequirePackage{array}
+\RequirePackage{longtable}
+\RequirePackage{tabularx}
+\RequirePackage[table]{xcolor}
+\RequirePackage{enumitem}
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+\RequirePackage{needspace}
+\RequirePackage{calc}
+\RequirePackage{amssymb}% \checkmark
+
+\graphicspath{{assets/}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist{nosep,leftmargin=1.5em}
+\sloppy
+
+% --- Colours (light tints so the form prints well in greyscale) ---
+\definecolor{vsugreen}{RGB}{0,104,55}
+\colorlet{charshade}{vsugreen!18}
+\colorlet{subshade}{vsugreen!7}
+\colorlet{headshade}{black!10}
+
+% --- Running header and footer ---
+% \InstrumentShortName is set by each instrument.
+\providecommand{\InstrumentShortName}{}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[L]{\footnotesize \SystemName{} \textbar{} \InstrumentShortName}
+\fancyhead[R]{\footnotesize Respondent No.\ \rule{2.4cm}{0.4pt}}
+\fancyfoot[L]{\footnotesize Project \ProjectCode, \Department, VSU}
+\fancyfoot[R]{\footnotesize Page \thepage{} of \pageref{LastPage}}
+
+% --- Title block: logo, unit, instrument title, study details ---
+% \InstrumentTitle{<title>}{<subtitle>}
+\newcommand{\InstrumentTitle}[2]{%
+  \thispagestyle{fancy}%
+  \noindent
+  \begin{minipage}[c]{2.6cm}
+    \includegraphics[width=2.5cm]{vsu-logo.png}
+  \end{minipage}%
+  \hspace{0.3cm}%
+  \begin{minipage}[c]{\linewidth-2.9cm}
+    {\large\bfseries\color{vsugreen}\MakeUppercase{\University}}\\[1pt]
+    {\bfseries \Faculty}\\
+    \Department\\
+    {\small \Address}
+  \end{minipage}\par
+  \vspace{4pt}{\color{vsugreen}\rule{\linewidth}{1.2pt}}\par
+  \vspace{2pt}
+  \begin{center}
+    {\Large\bfseries #1}\\[3pt]
+    {\normalsize #2}
+  \end{center}
+  \vspace{-4pt}
+  {\small
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash\bfseries}p{3.4cm}X@{}}
+    Research project & \ProjectTitle{} (Project Code \ProjectCode)\\
+    System evaluated & \SystemName{} (web application and Android app)\\
+    Project Leader   & \ProjectLeader\\
+    Study/Component Leaders & \ComponentLeaders\\
+  \end{tabularx}}\par
+  \vspace{2pt}{\color{vsugreen}\rule{\linewidth}{0.6pt}}\par}
+
+% --- Part and section headings ---
+\newcommand{\PartHeading}[1]{%
+  \par\Needspace{8\baselineskip}\vspace{8pt}%
+  {\large\bfseries\color{vsugreen}#1}\par\vspace{2pt}}
+% \Characteristic{<number and name>}{<plain-language definition>}
+\newcommand{\Characteristic}[2]{%
+  \par\Needspace{18\baselineskip}\vspace{6pt}%
+  \noindent\colorbox{charshade}{\parbox{\linewidth-2\fboxsep}{%
+    \textbf{#1}\\[1pt]{\small #2}}}\par\vspace{-2pt}}
+
+% --- Check boxes for profile and consent ---
+\newcommand{\cbox}{\raisebox{-0.2ex}{\framebox[1.7ex]{\rule{0pt}{1.2ex}}}}
+% The box stays with the first word; long labels may wrap.
+\newcommand{\opt}[1]{\cbox\nobreak\hspace{0.45em}#1\hspace{1.1em plus 0.5em}}
+\newcommand{\blank}[1][3cm]{\rule{#1}{0.4pt}}
+
+% --- Rating table ---------------------------------------------
+% Columns: No. | Statement | 5 | 4 | 3 | 2 | 1
+\newlength{\numcolw}\setlength{\numcolw}{0.85cm}
+\newlength{\ratecolw}\setlength{\ratecolw}{0.82cm}
+\newlength{\stmtcolw}
+\newlength{\fullrowv}
+\AtBeginDocument{%
+  \setlength{\stmtcolw}{\linewidth-\numcolw-5\ratecolw-14\tabcolsep-8\arrayrulewidth}%
+  \setlength{\fullrowv}{\linewidth-2\tabcolsep-2\arrayrulewidth}}
+
+\newcounter{itemno}
+\newcommand{\itemprefix}{}
+% \StartNumbering{<prefix>} restarts item numbers, e.g. A1, A2, ...
+\newcommand{\StartNumbering}[1]{\setcounter{itemno}{0}\renewcommand{\itemprefix}{#1}}
+
+\newcommand{\ratecircle}{\large$\bigcirc$}
+% Column header labels; the user instrument adds Cebuano.
+\newcommand{\StatementHeader}{Statement}
+\newcommand{\RateHeader}[2]{\shortstack{\textbf{#1}\\[-1pt]{\tiny #2}}}
+
+\newenvironment{ratingtable}{%
+  \setlength{\LTpre}{2pt}\setlength{\LTpost}{6pt}%
+  \renewcommand{\arraystretch}{1.22}%
+  \small
+  \begin{longtable}{|>{\centering\arraybackslash}m{\numcolw}|>{\raggedright\arraybackslash}m{\stmtcolw}|*{5}{>{\centering\arraybackslash}m{\ratecolw}|}}
+  \hline
+  \rowcolor{headshade}
+  \textbf{No.} & \textbf{\StatementHeader} &
+  \RateHeader{5}{SA} & \RateHeader{4}{A} & \RateHeader{3}{N} &
+  \RateHeader{2}{D} & \RateHeader{1}{SD}\\ \hline
+  \endhead
+}{%
+  \end{longtable}}
+
+% Sub-characteristic row; \\* keeps it on the same page as its first item.
+\newcommand{\SubChar}[1]{%
+  \multicolumn{7}{|>{\columncolor{subshade}}p{\fullrowv}|}{\textbf{#1}}\\*
+  \noalign{\hrule height\arrayrulewidth\penalty10000}}
+
+% Bilingual item: \BiItem{<English>}{<Cebuano>}
+\newcommand{\BiItem}[2]{%
+  \refstepcounter{itemno}\itemprefix\arabic{itemno} &
+  #1\newline{\itshape\color{black!75}#2} &
+  \ratecircle & \ratecircle & \ratecircle & \ratecircle & \ratecircle\\ \hline}
+
+% English-only item: \EnItem{<statement>}
+\newcommand{\EnItem}[1]{%
+  \refstepcounter{itemno}\itemprefix\arabic{itemno} &
+  #1 &
+  \ratecircle & \ratecircle & \ratecircle & \ratecircle & \ratecircle\\ \hline}
+
+% --- Writing space ---
+\newcount\instr@lines
+\newcommand{\WriteLines}[1]{%
+  \instr@lines=0
+  \loop\ifnum\instr@lines<#1
+    \advance\instr@lines by 1
+    \par\vspace{0.62cm}\noindent\rule{\linewidth}{0.3pt}%
+  \repeat\par}
+
+% \CommentBox[<lines>]{<prompt>}
+\newcommand{\CommentBox}[2][3]{%
+  \par\Needspace{\dimexpr #1\baselineskip+4\baselineskip\relax}\noindent
+  \fbox{\parbox{\linewidth-2\fboxsep-2\fboxrule}{%
+    \small #2\WriteLines{#1}\vspace{2pt}}}\par}
+
+\endinput
