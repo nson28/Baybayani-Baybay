@@ -9,22 +9,26 @@
 | Respondents | 28 (1 administrator form, 27 member/farmer forms) |
 | Source scans | `Downloads/farm2table_eval` (110 PNG pages, originals kept); compressed copies in [`scans/`](scans/) |
 | Transcribed | November 13, 2026 |
-| Status | **Draft: flagged readings still need checking against the paper forms** |
+| Status | **Verified: every flagged reading was checked against the paper forms on November 13, 2026** |
 
 ## 1. Conventions
 
 - Respondent codes R01–R28 follow the scan order. Names are left out of this file. The code-to-name key (`respondent_key.md`) is confidential: the Component Leader keeps it locally, and it is excluded from the repository. Signatures are not transcribed.
 - **Redaction:** in every stored scan and PDF, the participant's printed name and signature on the consent page (p1) are blacked out. The original unredacted scans are kept offline by the Component Leader.
-- Values are transcribed **exactly as written**, with no corrections.
-- `?` = uncertain reading (best guess shown); `x/y?` = two digits written over each other, where the scan does not show which is the final answer; `BLANK` = no answer.
-- Each uncertain value is listed in that respondent's *Flags* and also collected in Section 7.
+- Values are transcribed **exactly as written**. Where the scan was unclear, the value was confirmed against the paper form, and those entries are marked *[verified on paper 2026-11-13]* where the wording was changed.
+- `BLANK` = no answer on the paper form (each blank was confirmed on paper).
 - Cebuano and other handwritten text is kept as written; English glosses are in [brackets].
 
 ### 1.1 Decisions on record (Component Leader, November 13, 2026)
 
-- **Overwritten cells: resolved.** The Component Leader checked these 15 cells against the physical forms on November 13, 2026, and the final values are now in the tables: R05 Part 2B Q1–Q11 = 6 each; R06 2A-Q4 = 4, 2A-Q10 = 4, 2B-Q4 = 5; R15 2B-Q8 = 7. Each original flag stays in Section 7 with its resolution.
+- **Overwritten cells:** 15 cells with two digits written over each other were resolved from the physical forms: R05 Part 2B Q1–Q11 = 6 each; R06 2A-Q4 = 4, 2A-Q10 = 4, 2B-Q4 = 5; R15 2B-Q8 = 7.
+- **All other uncertain readings** were checked against the paper forms in a Q&A; Section 7.1 has every result. Two scores changed from the scan reading: **R17 2B-Q5 = 6** (read as 4) and **R22 2B-Q2 = 7** (read as 4).
 - **Sample membership:** all 28 forms stay in the sample. The role is recorded as the respondent answered it: R04 "For membership / Applicant", R11 and R15 "Officer".
+- **Consent:** R15's consent form is blank, but consent was given verbally. R10, R12 and R23 printed their names without signing; the printed name counts as consent. R24's form was signed by a representative ("by:"). All are kept in the sample.
 - **Date of accomplishment:** all forms were filled on **November 12, 2026**. Dates written otherwise (R01 "11/12/2024"; R07, R08 and R09 with year "24"; R18 "10/14/CC") are respondent slips, kept as written.
+- **Coding years as member** (Section 5, as of November 2026): "not yet" = 0 (R04); "less than two years" = 1.5 (R05); "MAY 20 2024" = 2.5 (R10); "since 2024" = 2 (R11); "9 months" = 0.75 (R16); "2–3 years" = 2.5, the midpoint (R24).
+- **Coding income** (Section 5): amounts given per month are annualized: R07 ₱5,000/month = ₱60,000; R20 ₱10,000/month = ₱120,000. Blank or illegible answers (R03, R04, R11, R13, R14, R15, R16, R22, R23) are coded as missing.
+- **Q5 "Others":** R11's "TYPHOON", written without ticking the box, is coded as Others. Where Others was ticked with nothing specified (R04, R07, R09, R12, R18, R27), it is coded as "Others (unspecified)".
 
 ## 2. Instruments
 
@@ -85,62 +89,62 @@ p4: Comments/Suggestions.
 ### 3.1 Part 2A (1–5)
 | Code | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|---|
-| R02 | 5 | 4 | 5 | 5? | 5 | 3? | 4 | 2 | 5 | 4 |
+| R02 | 5 | 4 | 5 | 5 | 5 | 3 | 4 | 2 | 5 | 4 |
 | R03 | 5 | 3 | 3 | 5 | 5 | 3 | 4 | 3 | 5 | 5 |
 | R04 | 5 | 4 | 4 | 4 | 4 | 4 | 3 | 2 | 4 | 4 |
 | R05 | 5 | 1 | 5 | 3 | 3 | 2 | 3 | 1 | 5 | 3 |
-| R06 | 3? | 3? | 3 | 4 | 3 | 4 | 4 | 3 | 4 | 4 |
-| R07 | 4 | 4 | 5? | 3 | 4 | 1 | BLANK | BLANK | 4 | 4 |
-| R08 | 3 | 4 | 4 | 3? | 4? | 2 | 2 | 4 | 4 | 5 |
+| R06 | 3 | 3 | 3 | 4 | 3 | 4 | 4 | 3 | 4 | 4 |
+| R07 | 4 | 4 | 5 | 3 | 4 | 1 | BLANK | BLANK | 4 | 4 |
+| R08 | 3 | 4 | 4 | 3 | 4 | 2 | 2 | 4 | 4 | 5 |
 | R09 | 4 | 4 | 4 | 3 | 4 | 3 | 4 | 4 | 4 | 5 |
-| R10 | 4? | 3 | 3? | 4 | 4 | 3 | 4 | 3 | 4 | 3 |
-| R11 | 3 | 3 | 3 | 4 | 3 | 3? | 3 | 3 | 4 | 3 |
+| R10 | 4 | 3 | 3 | 4 | 4 | 3 | 4 | 3 | 4 | 3 |
+| R11 | 3 | 3 | 3 | 4 | 3 | 3 | 3 | 3 | 4 | 3 |
 | R12 | 3 | 3 | 4 | 5 | 3 | 4 | 3 | 4 | 3 | 3 |
 | R13 | 4 | 3 | 4 | 3 | 5 | 4 | 3 | 3 | 4 | 3 |
 | R14 | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
-| R15 | 4 | 3 | 4 | 4 | 3 | 4? | 4 | 3 | 3 | 3 |
+| R15 | 4 | 3 | 4 | 4 | 3 | 4 | 4 | 3 | 3 | 3 |
 | R16 | 4 | 5 | 5 | 5 | 4 | 4 | 4 | 2 | 4 | 4 |
-| R17 | 5 | 4 | 4 | 5? | 5 | 4 | 4 | 5 | 5 | 4 |
-| R18 | 4 | 5? | 2 | 3 | 4 | 4 | 1 | 5 | 5 | 5 |
-| R19 | 3 | 3 | 3 | 3 | 3 | 3 | 5? | 3 | BLANK | 3 |
+| R17 | 5 | 4 | 4 | 5 | 5 | 4 | 4 | 5 | 5 | 4 |
+| R18 | 4 | 5 | 2 | 3 | 4 | 4 | 1 | 5 | 5 | 5 |
+| R19 | 3 | 3 | 3 | 3 | 3 | 3 | 5 | 3 | BLANK | 3 |
 | R20 | 4 | 4 | 4 | 4 | 4 | 3 | 4 | 4 | 4 | 4 |
-| R21 | 4? | 4? | BLANK? | 5 | 5 | 3 | 5 | 5 | 5 | 5 |
-| R22 | 4 | 4 | 4? | 4? | 4 | 2 | 4 | 2 | 3 | 3 |
+| R21 | 4 | 4 | BLANK | 5 | 5 | 3 | 5 | 5 | 5 | 5 |
+| R22 | 4 | 4 | 4 | 4 | 4 | 2 | 4 | 2 | 3 | 3 |
 | R23 | 4 | 4 | 4 | 4 | 3 | 2 | 4 | 3 | 2 | 3 |
 | R24 | BLANK | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 4 | 5 |
 | R25 | 2 | 3 | BLANK | 5 | 5 | 1 | 3 | 3 | 5 | 5 |
 | R26 | 5 | 5 | 5 | 4 | 4 | 2 | 4 | 3 | 4 | 4 |
-| R27 | 5 | 3 | 4? | 5 | 3 | 3 | 5 | 5 | 5 | 5 |
+| R27 | 5 | 3 | 4 | 5 | 3 | 3 | 5 | 5 | 5 | 5 |
 | R28 | 4 | 3 | 3 | 5 | 4 | 3 | 4 | 2 | 4 | 5 |
 
 ### 3.2 Part 2B (1–7)
 | Code | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| R02 | 6 | 5 | 6 | 5 | 3 | 7 | 7 | 6 | 7 | 5 | 7? | BLANK | 7 |
+| R02 | 6 | 5 | 6 | 5 | 3 | 7 | 7 | 6 | 7 | 5 | 7 | BLANK | 7 |
 | R03 | 7 | 6 | 6 | 7 | 7 | 5 | 7 | 7 | 6 | 6 | 7 | 7 | 7 |
 | R04 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 |
 | R05 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 |
-| R06 | 5 | 6? | 5 | 5 | 6 | 5 | 6 | 5 | 4 | 6 | 4? | 6 | 6 |
-| R07 | BLANK | BLANK | 4? | 6 | 7 | 6 | 7 | 6 | 7 | 7 | 7 | 7 | 7 |
-| R08 | BLANK | BLANK | BLANK | BLANK | 5 | 7 | 6 | 5 | 2? | 3 | BLANK | BLANK | BLANK |
-| R09 | 6 | 6 | 6 | 7 | 6 | 6? | 6 | 6 | 6? | 3 | 6 | 6 | 6? |
-| R10 | 6? | 6 | 6 | 6? | 6 | 6 | 5 | 4 | 5 | 5 | 6 | 4 | 5 |
+| R06 | 5 | 6 | 5 | 5 | 6 | 5 | 6 | 5 | 4 | 6 | 4 | 6 | 6 |
+| R07 | BLANK | BLANK | 4 | 6 | 7 | 6 | 7 | 6 | 7 | 7 | 7 | 7 | 7 |
+| R08 | BLANK | BLANK | BLANK | BLANK | 5 | 7 | 6 | 5 | 2 | 3 | BLANK | BLANK | BLANK |
+| R09 | 6 | 6 | 6 | 7 | 6 | 6 | 6 | 6 | 6 | 3 | 6 | 6 | 6 |
+| R10 | 6 | 6 | 6 | 6 | 6 | 6 | 5 | 4 | 5 | 5 | 6 | 4 | 5 |
 | R11 | 6 | 5 | 4 | 4 | 5 | 4 | 4 | 5 | 4 | 4 | 5 | 4 | 5 |
 | R12 | 3 | 4 | 4 | 5 | 4 | 3 | 4 | 3 | 4 | 4 | 5 | 4 | 4 |
-| R13 | 3 | 3 | 5 | 3? | 3 | 4 | 3 | 4 | 3 | 3 | 2 | 3 | 3? |
-| R14 | 3 | 4 | 4 | 3? | 4 | BLANK | 4 | 4 | 6 | 3 | 4 | 5? | 6 |
+| R13 | 3 | 3 | 5 | 3 | 3 | 4 | 3 | 4 | 3 | 3 | 2 | 3 | 3 |
+| R14 | 3 | 4 | 4 | 3 | 4 | BLANK | 4 | 4 | 6 | 3 | 4 | 5 | 6 |
 | R15 | 6 | 6 | 4 | 4 | 6 | 4 | 6 | 7 | BLANK | 6 | 4 | 6 | 6 |
 | R16 | 5 | 6 | 6 | 6 | 7 | 6 | 6 | 6 | 6 | 7 | 6 | 4 | 6 |
-| R17 | 5 | 5 | 6 | 6? | 4? | 6 | 5 | 4 | 3 | 5 | 6 | 5 | 3? |
-| R18 | 2 | 4 | 5 | 7 | 6 | 1? | 4 | 4 | 5? | 3? | 1 | 4 | 7 |
-| R19 | 6 | 7 | BLANK | 7 | 7 | 7 | 7 | 4 | 4 | 4? | 7 | BLANK? | 4? |
+| R17 | 5 | 5 | 6 | 6 | 6 | 6 | 5 | 4 | 3 | 5 | 6 | 5 | 3 |
+| R18 | 2 | 4 | 5 | 7 | 6 | 1 | 4 | 4 | 5 | 3 | 1 | 4 | 7 |
+| R19 | 6 | 7 | BLANK | 7 | 7 | 7 | 7 | 4 | 4 | 4 | 7 | BLANK | 4 |
 | R20 | 6 | 6 | 6 | 4 | 4 | 5 | 6 | 6 | 6 | 6 | 6 | 6 | 6 |
 | R21 | 5 | 6 | 6 | 6 | 7 | 7 | 6 | 4 | 4 | 5 | 6 | 4 | 6 |
-| R22 | 7 | 4? | 7 | 6 | 7 | 6 | 7 | 7 | 4 | 5 | 6 | 6 | 6 |
-| R23 | 4 | 4 | 6 | 6 | 6 | 7 | 4 | 4 | BLANK | 5 | BLANK | 6? | BLANK |
+| R22 | 7 | 7 | 7 | 6 | 7 | 6 | 7 | 7 | 4 | 5 | 6 | 6 | 6 |
+| R23 | 4 | 4 | 6 | 6 | 6 | 7 | 4 | 4 | BLANK | 5 | BLANK | 6 | BLANK |
 | R24 | 7 | 6 | 7 | 4 | 5 | 3 | 5 | 5 | 4 | 4 | 4 | 5 | 7 |
 | R25 | 4 | 5 | 5 | 4 | 4 | 4 | 5 | 4 | 4 | 5 | 4 | 4 | 4 |
-| R26 | 6 | 6 | 6 | 6 | 7 | 7 | 6 | 7? | 7 | 7 | 6 | 6 | 7 |
+| R26 | 6 | 6 | 6 | 6 | 7 | 7 | 6 | 7 | 7 | 7 | 6 | 6 | 7 |
 | R27 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 6 | 6 | 6 | 6 | 5 | 5 |
 | R28 | 6 | 7 | 7 | 7 | 7 | 6 | 7 | 6 | 6 | 6 | 6 | 6 | 7 |
 
@@ -148,39 +152,39 @@ p4: Comments/Suggestions.
 
 | Part | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1A (1–5) | 5 | 4? | 5 | 1 | 4 | 2 | 4 | 1 | 4 | 1 | – | – | – |
+| 1A (1–5) | 5 | 4 | 5 | 1 | 4 | 2 | 4 | 1 | 4 | 1 | – | – | – |
 | 1B (1–7) | 7 | 7 | 7 | 7 | 7 | 6 | 7 | 7 | 2 | 6 | 7 | 6 | 7 |
 
 ## 5. Member demographic profile (R02–R28)
-| Code | Q1 Role | Q2 Sex | Q3 Years as member | Q4 Crops produced | Q5 Problems | Q6 Est. annual income |
-|---|---|---|---|---|---|---|
-| R02 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | 2 years | Paliya [bitter gourd], Okra, Kalabasa [squash], Kamatis [tomato] | Insects/Pests (checked) | 30k |
-| R03 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | 1 year | Musk Melon, Watermelon | Insects/Pests (checked); Plant disease (checked) | BLANK |
-| R04 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | not yet (~~already~~) — "already" is struck through | Pipino [cucumber], String beans, Okra, Talong [eggplant] | Insects/Pests (checked); Plant disease (checked); Others (checked, specify line BLANK) | BLANK |
-| R05 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Female (checked) | less than two years | string beans, cucumber, sweet corn, calamansi | Insects/Pests (checked); Plant disease (checked) | ₱50,000 |
-| R06 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | 2? years | atsal [bell pepper / sweet pepper] | Insects/Pests (checked); Plant disease (checked) | 100.000 [as written, period used as thousands separator; i.e. 100,000] |
-| R07 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Female (checked) | 2 years | pipino [cucumber], upo [bottle gourd], ~~sili?~~ (crossed out), labayo? [possibly "labuyo", bird's-eye chili], Kalabasa [squash] | Insects/Pests (checked); Others (checked, specify line BLANK) | 5,000? (preceded by two crossed-out words; first digit possibly "₱5" or "5") |
-| R08 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | 2 yrs. | Talong pipino upo pakwan [eggplant, cucumber, bottle gourd, watermelon] | Insects/Pests (checked); Plant disease (checked); Others: BLANK | ₱10,000 (written "₱ 10,ooo") |
-| R09 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | 2 yrs. | Talong, upo, Atsal, sili, spada?, pipino, pakodo?, s-dahon? [eggplant, bottle gourd, bell pepper, chili, ?, cucumber, ?, ?] | Insects/Pests (checked); Plant disease: not checked; Others (checked), specify line BLANK | 10,000 for 1 year (written "10,ooo for 1 year") |
-| R10 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | MAY 20 2024 (a start date was written, not a number of years) | EGG PLANT, PALIYA, CALABASA, ATSAL [eggplant, bitter gourd (ampalaya), squash, bell pepper] | Insects/Pests (checked); Plant disease (checked); Others: BLANK | 35K |
-| R11 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | SINCE FROM START YEAR 2024 | PINAKBIT, CAULIFLOWER, LETTUCE, CABBAGE [pinakbet vegetables (mixed vegetables for the pinakbet dish), cauliflower, lettuce, cabbage] | Insects/Pests (checked); Plant disease: not checked; Others: box NOT checked, but "TYPHOON" written on the specify line | BLANK |
-| R12 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | 3 year | Talong [eggplant] | Insects/Pests (checked); Plant disease (checked); Others (checked), specify line BLANK | 200000? |
-| R13 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | 2 year? (number scribbled/overwritten) | ATSAL, PAKUDO, Sili spada, OKRA [bell pepper, ?, long green chili (siling espada), okra] | Insects/Pests (checked); Plant disease: not checked; Others: BLANK | ILLEGIBLE (scribble, roughly "a ke for"?) |
-| R14 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Female (checked) | "~~Member~~ 3 years" (the word "Member" is written and struck through, followed by "3 years") | BLANK | BLANK (no box checked) | BLANK |
-| R15 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Female (checked) | 2yrs | ampalaya [bitter gourd], watermelon, squash, okra, pipino [cucumber] | Insects/Pests (checked); Plant disease (checked) | BLANK |
-| R16 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | 9 months | Batong [string beans], Atsal [bell pepper], melon, spada [possibly "espada" sword bean], kalabasa [squash] (pia) | Insects/Pests (checked); Plant disease (checked) | BLANK |
-| R17 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | "√ YEARS" (number unclear; see flags) | PALIYA [ampalaya/bitter gourd], TALONG [eggplant], ATSAL [bell pepper], KAMATIS [tomato], SWEET CORN, SIBUYAS [onion], DAHON? [leaves/leafy vegetables?], KAMOTI [kamote/sweet potato] | Insects/Pests (checked); Plant disease (checked); Others (checked): "WHITE FLIES" | 50 K? |
-| R18 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | 2 (preceded by a scribbled-out mark) | BATONG [string beans], PALYA [ampalaya/bitter gourd], PIPINO [cucumber], KAMATES [kamatis/tomato], TALONG [eggplant] (written "IALONG") | Insects/Pests (checked); Others (checked), with no specification written | ₱.65,000 [₱65,000] |
-| R19 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | 2 years | Talong [eggplant] | Insects/Pests (checked); Plant disease (checked) | 100,000? (written "100.000"/"100,000") |
-| R20 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | 2 YEARS | PITCHAY [pechay/bok choy] - SWEET CORN - TALONG [eggplant] | Insects/Pests (checked); Plant disease (checked) | 10K / MONTH |
-| R21 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Female (checked) | 2 years | paliya [bitter gourd/ampalaya], Talong [eggplant], kalabasa [squash], pipino [cucumber] | Insects/Pests (checked); Plant disease (checked) | ₱ 10,000? (written "₱ 10 000") |
-| R22 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Female (checked) | One year | upo [bottle gourd], paleya [bitter gourd/ampalaya], pechay [bok choy], Talong [eggplant], kamatis [tomato], okra, sili [chili], atsal [bell pepper], labuyo [bird's-eye chili]. | Insects/Pests (checked); Plant disease (checked) | BLANK |
-| R23 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Female (checked) | two years | upo [bottle gourd] Batong [string beans] Paliya [bitter gourd/ampalaya] talong [eggplant] Pakwan [watermelon] | Insects/Pests (checked) | BLANK |
-| R24 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Female (checked) | "2-3 years pero dili sure kung sakto akong pagag pangagpas" [2-3 years but not sure if my estimate is correct] | "Talong, Okra, pipino, upo, batong, ~~talo~~ Labuyo alogbati" [eggplant, okra, cucumber, bottle gourd, string beans, chili (labuyo), Malabar spinach (alugbati)]; "talo" crossed out | Insects/Pests (checked); Plant disease (checked); Others (checked): "Kawatan sa silingan" [thieves from the neighbors] | "₱200,000? yearly ang bana-bana na ko sa 1 year" [₱200,000 yearly is my estimate for 1 year] |
-| R25 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | 2 | "OPO? SIKAW?" [likely upo = bottle gourd; sikwa = sponge gourd/patola] | Insects/Pests (checked); Plant disease (checked) | "100.000?" (written "100.00 0", likely 100,000) |
-| R26 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | "three years" | "eggplant, stringbeans, cucumber, upo" | Insects/Pests (checked); Plant disease (checked) | 100,000 |
-| R27 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | "13? Years" | "Cauliflower, Ampalaya, Batong, Pechay, Atsal" [cauliflower, bitter gourd, string beans, pechay/bok choy, bell pepper] | Insects/Pests (checked); Plant disease (checked); Others (checked, nothing specified) | "180,000?" |
-| R28 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Male (checked) | 3 | "Palya? Kamates" [bitter gourd (ampalaya), tomato] | Insects/Pests (checked); Plant disease (checked) | 20,000 |
+| Code | Q1 Role | Q2 Sex | Q3 Years as member (as written) | Years (coded) | Q4 Crops produced | Q5 Problems | Q6 Est. annual income (as written) | Annual income, ₱ (coded) |
+|---|---|---|---|---|---|---|---|---|
+| R02 | Member (checked) | Male (checked) | 2 years | 2 | Paliya [bitter gourd], Okra, Kalabasa [squash], Kamatis [tomato] | Insects/Pests (checked) | 30k | 30,000 |
+| R03 | Member (checked) | Male (checked) | 1 year | 1 | Musk Melon, Watermelon | Insects/Pests (checked); Plant disease (checked) | BLANK | missing |
+| R04 | Others (checked) — specify: "For membership / Applicant" | Male (checked) | not yet (~~already~~) — "already" is struck through | 0 | Pipino [cucumber], String beans, Okra, Talong [eggplant] | Insects/Pests (checked); Plant disease (checked); Others (checked, specify line BLANK) | BLANK | missing |
+| R05 | Member (checked) | Female (checked) | less than two years | 1.5 | string beans, cucumber, sweet corn, calamansi | Insects/Pests (checked); Plant disease (checked) | ₱50,000 | 50,000 |
+| R06 | Member (checked) | Male (checked) | 2 years [verified on paper 2026-11-13] | 2 | atsal [bell pepper / sweet pepper] | Insects/Pests (checked); Plant disease (checked) | 100.000 [= ₱100,000] | 100,000 |
+| R07 | Member (checked) | Female (checked) | 2 years | 2 | pipino [cucumber], upo [bottle gourd], labuyo [bird's-eye chili], kalabasa [squash] [verified on paper 2026-11-13] | Insects/Pests (checked); Others (checked, specify line BLANK) | 5,000 per month (two words scribbled out before the amount) [verified on paper 2026-11-13] | 60,000 |
+| R08 | Member (checked) | Male (checked) | 2 yrs. | 2 | Talong pipino upo pakwan [eggplant, cucumber, bottle gourd, watermelon] | Insects/Pests (checked); Plant disease (checked); Others: BLANK | ₱10,000 (written "₱ 10,ooo") | 10,000 |
+| R09 | Member (checked) | Male (checked) | 2 yrs. | 2 | talong [eggplant], upo [bottle gourd], atsal [bell pepper], sili [chili], spada [siling espada], pipino [cucumber], pakodo, sibuyas dahon [spring onion] [verified on paper 2026-11-13] | Insects/Pests (checked); Plant disease: not checked; Others (checked), specify line BLANK | 10,000 for 1 year (written "10,ooo for 1 year") | 10,000 |
+| R10 | Member (checked) | Male (checked) | MAY 20 2024 (a start date was written, not a number of years) | 2.5 | EGG PLANT, PALIYA, CALABASA, ATSAL [eggplant, bitter gourd (ampalaya), squash, bell pepper] | Insects/Pests (checked); Plant disease (checked); Others: BLANK | 35K | 35,000 |
+| R11 | Officer (checked) | Male (checked) | SINCE FROM START YEAR 2024 | 2 | PINAKBIT, CAULIFLOWER, LETTUCE, CABBAGE [pinakbet vegetables (mixed vegetables for the pinakbet dish), cauliflower, lettuce, cabbage] | Insects/Pests (checked); Others: "TYPHOON" (written on the specify line; box not ticked, coded as Others) | BLANK | missing |
+| R12 | Member (checked) | Male (checked) | 3 year | 3 | Talong [eggplant] | Insects/Pests (checked); Plant disease (checked); Others (checked), specify line BLANK | 200000 [= ₱200,000] [verified on paper 2026-11-13] | 200,000 |
+| R13 | Member (checked) | Male (checked) | 2 year (number overwritten) [verified on paper 2026-11-13] | 2 | atsal [bell pepper], pakudo, sili spada [siling espada], okra [verified on paper 2026-11-13] | Insects/Pests (checked); Plant disease: not checked; Others: BLANK | ILLEGIBLE (illegible on the paper form too) | missing |
+| R14 | Member (checked) | Female (checked) | "~~Member~~ 3 years" (the word "Member" is written and struck through, followed by "3 years") | 3 | BLANK | BLANK (no box checked) | BLANK | missing |
+| R15 | Officer (checked); see flags | Female (checked) | 2yrs | 2 | ampalaya [bitter gourd], watermelon, squash, okra, pipino [cucumber] | Insects/Pests (checked); Plant disease (checked) | BLANK | missing |
+| R16 | Member (checked) | Male (checked) | 9 months | 0.75 | Batong [string beans], Atsal [bell pepper], melon, spada [possibly "espada" sword bean], kalabasa [squash] (pia) | Insects/Pests (checked); Plant disease (checked) | BLANK | missing |
+| R17 | Member (checked) | Male (checked) | 2 YEARS (digit written like "√") [verified on paper 2026-11-13] | 2 | paliya [bitter gourd], talong [eggplant], atsal [bell pepper], kamatis [tomato], sweet corn, sibuyas dahon [spring onion], kamote [sweet potato] [verified on paper 2026-11-13] | Insects/Pests (checked); Plant disease (checked); Others (checked): "WHITE FLIES" | 50 K [= ₱50,000] [verified on paper 2026-11-13] | 50,000 |
+| R18 | Member (checked) | Male (checked) | 2 (preceded by a scribbled-out mark) | 2 | BATONG [string beans], PALYA [ampalaya/bitter gourd], PIPINO [cucumber], KAMATES [kamatis/tomato], TALONG [eggplant] (written "IALONG") | Insects/Pests (checked); Others (checked), with no specification written | ₱.65,000 [₱65,000] | 65,000 |
+| R19 | Member (checked) | Male (checked) | 2 years | 2 | Talong [eggplant] | Insects/Pests (checked); Plant disease (checked) | 100.000 [= ₱100,000] [verified on paper 2026-11-13] | 100,000 |
+| R20 | Member (checked) | Male (checked) | 2 YEARS | 2 | PITCHAY [pechay/bok choy] - SWEET CORN - TALONG [eggplant] | Insects/Pests (checked); Plant disease (checked) | 10K / MONTH | 120,000 |
+| R21 | Member (checked) | Female (checked) | 2 years | 2 | paliya [bitter gourd/ampalaya], Talong [eggplant], kalabasa [squash], pipino [cucumber] | Insects/Pests (checked); Plant disease (checked) | ₱100,000 (written "₱ 100 000") [verified on paper 2026-11-13] | 100,000 |
+| R22 | Member (checked) | Female (checked) | One year | 1 | upo [bottle gourd], paleya [bitter gourd/ampalaya], pechay [bok choy], Talong [eggplant], kamatis [tomato], okra, sili [chili], atsal [bell pepper], labuyo [bird's-eye chili]. | Insects/Pests (checked); Plant disease (checked) | BLANK | missing |
+| R23 | Member (checked) | Female (checked) | two years | 2 | upo [bottle gourd] Batong [string beans] Paliya [bitter gourd/ampalaya] talong [eggplant] Pakwan [watermelon] | Insects/Pests (checked) | BLANK | missing |
+| R24 | Member (checked) | Female (checked) | "2-3 years pero dili sure kung sakto akong pagag pangagpas" [2-3 years but not sure if my estimate is correct] | 2.5 | "Talong, Okra, pipino, upo, batong, ~~talo~~ Labuyo alogbati" [eggplant, okra, cucumber, bottle gourd, string beans, chili (labuyo), Malabar spinach (alugbati)]; "talo" crossed out | Insects/Pests (checked); Plant disease (checked); Others (checked): "Kawatan sa silingan" [thieves from the neighbors] | "₱200,000 yearly ang bana-bana na ko sa 1 year" [₱200,000 yearly is my estimate] [verified on paper 2026-11-13] | 200,000 |
+| R25 | Member (checked) | Male (checked) | 2 | 2 | upo [bottle gourd], sikwa [sponge gourd] [verified on paper 2026-11-13] | Insects/Pests (checked); Plant disease (checked) | 100.00 0 [= ₱100,000] [verified on paper 2026-11-13] | 100,000 |
+| R26 | Member (checked) | Male (checked) | "three years" | 3 | "eggplant, stringbeans, cucumber, upo" | Insects/Pests (checked); Plant disease (checked) | 100,000 | 100,000 |
+| R27 | Member (checked) | Male (checked) | 3 Years (a stray mark before the 3) [verified on paper 2026-11-13] | 3 | "Cauliflower, Ampalaya, Batong, Pechay, Atsal" [cauliflower, bitter gourd, string beans, pechay/bok choy, bell pepper] | Insects/Pests (checked); Plant disease (checked); Others (checked, nothing specified) | 150,000 [verified on paper 2026-11-13] | 150,000 |
+| R28 | Member (checked) | Male (checked) | 3 | 3 | paliya [bitter gourd], kamatis [tomato] [verified on paper 2026-11-13] | Insects/Pests (checked); Plant disease (checked) | 20,000 | 20,000 |
 
 ## 6. Comments and suggestions
 - **R01:** "Online transaction payment e.g. GCash / Maya / Maribank."
@@ -203,16 +207,116 @@ p4: Comments/Suggestions.
 - **R18:** None
 - **R19:** "no comment"
 - **R20:** 1) CUSTOMER ADRESS 2) TIME OF PICK-UP FOR PRIORITY STORE PREP. 3) [the whole line is heavily scribbled out by the respondent and illegible, apart from fragments such as "...THE ADMIN..."]
-- **R21:** "Nindot para sa mga naka tigo sa phone. para Mas easy ang Transaction." [Gloss: Nice for those who are used to (?) the phone, so the transaction is easier.]
-- **R22:** "I'm so overwhelm that I strongly recommend it to my friends to use this app."
+- **R21:** "Nindot para sa mga nakatigo sa phone para mas easy ang transaction." [Nice for those who are used to phones, so the transaction is easier.] [verified on paper 2026-11-13]
+- **R22:** "I'm so overwhelm that I strongly recommend it to my friends to use this app." [verified on paper 2026-11-13]
 - **R23:** "IM so over whel that I strongly recommend it Im my frinds to use this app" [read as: I'm so overwhelmed that I strongly recommend it to my friends to use this app]
 - **R24:** None
 - **R25:** None
-- **R26:** "Kini ang app maayo para masayon ang pagpalit ug mga utanon, kinahanglan pa i-enprasizo? ang kini nga klase nga app." [This app is good for making it easy to buy vegetables; this kind of app needs to be emphasized/promoted more.] (cursive; several words uncertain)
+- **R26:** "Kini ang app maayo para masayon ang pagpalit ug mga utanon. Kinahanglan pa i-improve ang kini nga klase nga app." [This app is good for making it easier to buy vegetables. This kind of app still needs to be improved.] [verified on paper 2026-11-13]
 - **R27:** None
 - **R28:** None
 
-## 7. Verification log (all flags)
+## 7. Verification log
+
+### 7.1 Results of the paper-form check (November 13, 2026)
+Final values after checking each flagged item against the physical forms. Scores in Sections 3–4 and 8 already reflect these values.
+
+| Code | Item | Final value on paper |
+|---|---|---|
+| R01 | 1A-Q2 | 4 |
+| R02 | 2A-Q4 | 5 |
+| R02 | 2A-Q6 | 3 |
+| R02 | 2B-Q11 | 7 |
+| R02 | 2B-Q12 | BLANK |
+| R06 | 2A-Q1 | 3 |
+| R06 | 2A-Q2 | 3 |
+| R06 | 2B-Q2 | 6 |
+| R06 | 2B-Q11 | 4 |
+| R07 | 2A-Q3 | 5 |
+| R07 | 2B-Q3 | 4 |
+| R08 | 2A-Q4 | 3 |
+| R08 | 2A-Q5 | 4 |
+| R08 | 2B-Q9 | 2 |
+| R09 | 2B-Q6 | 6 |
+| R09 | 2B-Q9 | 6 |
+| R09 | 2B-Q13 | 6 |
+| R10 | 2A-Q1 | 4 |
+| R10 | 2A-Q3 | 3 |
+| R10 | 2B-Q1 | 6 |
+| R10 | 2B-Q4 | 6 |
+| R11 | 2A-Q6 | 3 |
+| R11 | 2B-Q1 | 6 |
+| R11 | 2B-Q2 | 5 |
+| R11 | 2B-Q5 | 5 |
+| R11 | 2B-Q8 | 5 |
+| R11 | 2B-Q11 | 5 |
+| R13 | 2B-Q4 | 3 |
+| R13 | 2B-Q13 | 3 |
+| R14 | 2B-Q4 | 3 |
+| R14 | 2B-Q12 | 5 |
+| R14 | 2A-all | BLANK |
+| R15 | 2A-Q6 | 4 |
+| R17 | 5-style | all ten confirmed 5 |
+| R17 | 2A-Q4 | 5 |
+| R17 | 2B-Q4 | 6 |
+| R17 | 2B-Q5 | 6 |
+| R17 | 2B-Q13 | 3 |
+| R18 | 2A-Q2 | 5 |
+| R18 | 2A-Q7 | 1 |
+| R18 | 2B-Q6 | 1 |
+| R18 | 2B-Q9 | 5 |
+| R18 | 2B-Q10 | 3 |
+| R18 | 2B-Q11 | 1 |
+| R19 | 2A-Q7 | 5 |
+| R19 | 2B-Q11 | 7 |
+| R19 | 2B-Q12 | BLANK |
+| R19 | 2B-Q13 | 4 |
+| R21 | 2A-Q1 | 4 |
+| R21 | 2A-Q2 | 4 |
+| R21 | 2A-Q3 | BLANK |
+| R22 | 2A-Q3 | 4 |
+| R22 | 2A-Q4 | 4 |
+| R22 | 2B-Q2 | 7 |
+| R23 | 2B-Q12 | 6 |
+| R26 | 2B-Q8 | 7 |
+| R27 | 2A-Q3 | 4 |
+| ALL | blank score cells | confirmed blank on paper |
+| POLICY | Q3 years coding | convert to years as of Nov 2026: R04=0, R10=2.5, R11=2, R16=0.75, R24=2.5 (midpoint) |
+| R27 | Q3 | 3 |
+| R13 | Q3 | 2 |
+| R17 | Q3 | 2 |
+| R12 | Q6 | 200,000 |
+| R24 | Q6 | 200,000 |
+| R27 | Q6 | 150,000 |
+| R13 | Q6 | MISSING (illegible on paper) |
+| R20 | Q6 | annualized 120,000 (written 10K/month) |
+| R17 | Q6 | 50,000 |
+| R19 | Q6 | 100,000 |
+| R25 | Q6 | 100,000 |
+| R21 | Q6 | 100,000 |
+| ALL | blank income R03 R04 R11 R14 R22 R23 | confirmed blank |
+| R11 | Q5 | Others: Typhoon |
+| ALL | Q5 Others unspecified R04 R07 R09 R12 R18 R27 | Others (unspecified) |
+| R07 | Q6 | 5,000 per month -> annualized 60,000 |
+| R07 | Q4 | pipino, upo, labuyo, kalabasa |
+| R09 | Q4 | talong, upo, atsal, sili, spada, pipino, pakodo, sibuyas dahon |
+| R13 | Q4 | atsal, pakudo, sili spada, okra |
+| R16 | Q4 | keep as transcribed |
+| R17 | Q4 | paliya, talong, atsal, kamatis, sweet corn, sibuyas dahon, kamote |
+| R25 | Q4 | upo, sikwa |
+| R28 | Q4 | paliya, kamatis |
+| R26 | comment | kini ang app maayo para masayon ang pagpalit ug mga utanon. kinahanglan pa i improve ang kini nga klase nga app. |
+| R21 | comment | nindot para sa mga nakatigo sa phone para mas easy ang transaction. |
+| R22 | comment | I'm so overwhelm that I strongly recommend it to my friends to use this app |
+| R19 | 2B-Q10 | 4 |
+| R06 | Q3 | 2 years |
+| R05 | Q3 coded | 1.5 years |
+| R15 | Q6 | BLANK confirmed |
+| R16 | Q6 | BLANK confirmed |
+
+### 7.2 Flags raised during transcription
+These are the original notes from transcribing the scans. Each one was resolved in 7.1, or is an observation that needs no decision, such as a stray mark outside the score cells.
+
 - R01 date: year written as 2024 although the evaluation was held 11/12/2026; likely a slip by the respondent.
 - R01 1A-Q2: "4" appears written over another digit (possibly a corrected value).
 - R02 general: respondent writes 5 in a looped, "ծ"-like style (a loop with a top bar); all 5s read on that basis (2A-Q1, Q3, Q5, Q9; 2B-Q2, Q4, Q10).
@@ -375,7 +479,7 @@ p4: Comments/Suggestions.
 **Part 1A — Perceived Usability (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 5 | 4? | 5 | 1 | 4 | 2 | 4 | 1 | 4 | 1 |
+| 5 | 4 | 5 | 1 | 4 | 2 | 4 | 1 | 4 | 1 |
 
 **Part 1B — Administrator items (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
@@ -407,12 +511,12 @@ p4: Comments/Suggestions.
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 5 | 4 | 5 | 5? | 5 | 3? | 4 | 2 | 5 | 4 |
+| 5 | 4 | 5 | 5 | 5 | 3 | 4 | 2 | 5 | 4 |
 
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 6 | 5 | 6 | 5 | 3 | 7 | 7 | 6 | 7 | 5 | 7? | BLANK | 7 |
+| 6 | 5 | 6 | 5 | 3 | 7 | 7 | 6 | 7 | 5 | 7 | BLANK | 7 |
 
 **Comments/Suggestions:** None (page 4 left blank)
 
@@ -537,20 +641,20 @@ p4: Comments/Suggestions.
 |---|---|
 | Q1 Role | Member (checked) |
 | Q2 Sex | Male (checked) |
-| Q3 Years as member | 2? years |
+| Q3 Years as member | 2 years [verified on paper 2026-11-13] |
 | Q4 Crops produced | atsal [bell pepper / sweet pepper] |
 | Q5 Problems encountered | Insects/Pests (checked); Plant disease (checked) |
-| Q6 Est. annual farm income | 100.000 [as written, period used as thousands separator; i.e. 100,000] |
+| Q6 Est. annual farm income | 100.000 [= ₱100,000] |
 
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 3? | 3? | 3 | 4 | 3 | 4 | 4 | 3 | 4 | 4 |
+| 3 | 3 | 3 | 4 | 3 | 4 | 4 | 3 | 4 | 4 |
 
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 5 | 6? | 5 | 5 | 6 | 5 | 6 | 5 | 4 | 6 | 4? | 6 | 6 |
+| 5 | 6 | 5 | 5 | 6 | 5 | 6 | 5 | 4 | 6 | 4 | 6 | 6 |
 
 **Comments/Suggestions:** None (page 4 left blank)
 
@@ -577,19 +681,19 @@ p4: Comments/Suggestions.
 | Q1 Role | Member (checked) |
 | Q2 Sex | Female (checked) |
 | Q3 Years as member | 2 years |
-| Q4 Crops produced | pipino [cucumber], upo [bottle gourd], ~~sili?~~ (crossed out), labayo? [possibly "labuyo", bird's-eye chili], Kalabasa [squash] |
+| Q4 Crops produced | pipino [cucumber], upo [bottle gourd], labuyo [bird's-eye chili], kalabasa [squash] [verified on paper 2026-11-13] |
 | Q5 Problems encountered | Insects/Pests (checked); Others (checked, specify line BLANK) |
-| Q6 Est. annual farm income | 5,000? (preceded by two crossed-out words; first digit possibly "₱5" or "5") |
+| Q6 Est. annual farm income | 5,000 per month (two words scribbled out before the amount) [verified on paper 2026-11-13] |
 
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 4 | 4 | 5? | 3 | 4 | 1 | BLANK | BLANK | 4 | 4 |
+| 4 | 4 | 5 | 3 | 4 | 1 | BLANK | BLANK | 4 | 4 |
 
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| BLANK | BLANK | 4? | 6 | 7 | 6 | 7 | 6 | 7 | 7 | 7 | 7 | 7 |
+| BLANK | BLANK | 4 | 6 | 7 | 6 | 7 | 6 | 7 | 7 | 7 | 7 | 7 |
 
 **Comments/Suggestions:** None (page 4 left blank)
 
@@ -625,12 +729,12 @@ p4: Comments/Suggestions.
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 3 | 4 | 4 | 3? | 4? | 2 | 2 | 4 | 4 | 5 |
+| 3 | 4 | 4 | 3 | 4 | 2 | 2 | 4 | 4 | 5 |
 
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| BLANK | BLANK | BLANK | BLANK | 5 | 7 | 6 | 5 | 2? | 3 | BLANK | BLANK | BLANK |
+| BLANK | BLANK | BLANK | BLANK | 5 | 7 | 6 | 5 | 2 | 3 | BLANK | BLANK | BLANK |
 
 **Comments/Suggestions:** None (blank)
 
@@ -653,7 +757,7 @@ p4: Comments/Suggestions.
 | Q1 Role | Member (checked) |
 | Q2 Sex | Male (checked) |
 | Q3 Years as member | 2 yrs. |
-| Q4 Crops produced | Talong, upo, Atsal, sili, spada?, pipino, pakodo?, s-dahon? [eggplant, bottle gourd, bell pepper, chili, ?, cucumber, ?, ?] |
+| Q4 Crops produced | talong [eggplant], upo [bottle gourd], atsal [bell pepper], sili [chili], spada [siling espada], pipino [cucumber], pakodo, sibuyas dahon [spring onion] [verified on paper 2026-11-13] |
 | Q5 Problems encountered | Insects/Pests (checked); Plant disease: not checked; Others (checked), specify line BLANK |
 | Q6 Est. annual farm income | 10,000 for 1 year (written "10,ooo for 1 year") |
 
@@ -665,7 +769,7 @@ p4: Comments/Suggestions.
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 6 | 6 | 6 | 7 | 6 | 6? | 6 | 6 | 6? | 3 | 6 | 6 | 6? |
+| 6 | 6 | 6 | 7 | 6 | 6 | 6 | 6 | 6 | 3 | 6 | 6 | 6 |
 
 **Comments/Suggestions:** None (blank)
 
@@ -694,12 +798,12 @@ p4: Comments/Suggestions.
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 4? | 3 | 3? | 4 | 4 | 3 | 4 | 3 | 4 | 3 |
+| 4 | 3 | 3 | 4 | 4 | 3 | 4 | 3 | 4 | 3 |
 
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 6? | 6 | 6 | 6? | 6 | 6 | 5 | 4 | 5 | 5 | 6 | 4 | 5 |
+| 6 | 6 | 6 | 6 | 6 | 6 | 5 | 4 | 5 | 5 | 6 | 4 | 5 |
 
 **Comments/Suggestions:** None (blank)
 
@@ -722,13 +826,13 @@ p4: Comments/Suggestions.
 | Q2 Sex | Male (checked) |
 | Q3 Years as member | SINCE FROM START YEAR 2024 |
 | Q4 Crops produced | PINAKBIT, CAULIFLOWER, LETTUCE, CABBAGE [pinakbet vegetables (mixed vegetables for the pinakbet dish), cauliflower, lettuce, cabbage] |
-| Q5 Problems encountered | Insects/Pests (checked); Plant disease: not checked; Others: box NOT checked, but "TYPHOON" written on the specify line |
+| Q5 Problems encountered | Insects/Pests (checked); Others: "TYPHOON" (written on the specify line; box not ticked, coded as Others) |
 | Q6 Est. annual farm income | BLANK |
 
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 3 | 3 | 3 | 4 | 3 | 3? | 3 | 3 | 4 | 3 |
+| 3 | 3 | 3 | 4 | 3 | 3 | 3 | 3 | 4 | 3 |
 
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
@@ -763,7 +867,7 @@ p4: Comments/Suggestions.
 | Q3 Years as member | 3 year |
 | Q4 Crops produced | Talong [eggplant] |
 | Q5 Problems encountered | Insects/Pests (checked); Plant disease (checked); Others (checked), specify line BLANK |
-| Q6 Est. annual farm income | 200000? |
+| Q6 Est. annual farm income | 200000 [= ₱200,000] [verified on paper 2026-11-13] |
 
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
@@ -792,10 +896,10 @@ p4: Comments/Suggestions.
 |---|---|
 | Q1 Role | Member (checked) |
 | Q2 Sex | Male (checked) |
-| Q3 Years as member | 2 year? (number scribbled/overwritten) |
-| Q4 Crops produced | ATSAL, PAKUDO, Sili spada, OKRA [bell pepper, ?, long green chili (siling espada), okra] |
+| Q3 Years as member | 2 year (number overwritten) [verified on paper 2026-11-13] |
+| Q4 Crops produced | atsal [bell pepper], pakudo, sili spada [siling espada], okra [verified on paper 2026-11-13] |
 | Q5 Problems encountered | Insects/Pests (checked); Plant disease: not checked; Others: BLANK |
-| Q6 Est. annual farm income | ILLEGIBLE (scribble, roughly "a ke for"?) |
+| Q6 Est. annual farm income | ILLEGIBLE (illegible on the paper form too) |
 
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
@@ -805,7 +909,7 @@ p4: Comments/Suggestions.
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 3 | 3 | 5 | 3? | 3 | 4 | 3 | 4 | 3 | 3 | 2 | 3 | 3? |
+| 3 | 3 | 5 | 3 | 3 | 4 | 3 | 4 | 3 | 3 | 2 | 3 | 3 |
 
 **Comments/Suggestions:** None (blank)
 
@@ -842,7 +946,7 @@ p4: Comments/Suggestions.
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 3 | 4 | 4 | 3? | 4 | BLANK | 4 | 4 | 6 | 3 | 4 | 5? | 6 |
+| 3 | 4 | 4 | 3 | 4 | BLANK | 4 | 4 | 6 | 3 | 4 | 5 | 6 |
 
 **Comments/Suggestions:** None
 
@@ -873,7 +977,7 @@ p4: Comments/Suggestions.
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 4 | 3 | 4 | 4 | 3 | 4? | 4 | 3 | 3 | 3 |
+| 4 | 3 | 4 | 4 | 3 | 4 | 4 | 3 | 3 | 3 |
 
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
@@ -932,20 +1036,20 @@ p4: Comments/Suggestions.
 |---|---|
 | Q1 Role | Member (checked) |
 | Q2 Sex | Male (checked) |
-| Q3 Years as member | "√ YEARS" (number unclear; see flags) |
-| Q4 Crops produced | PALIYA [ampalaya/bitter gourd], TALONG [eggplant], ATSAL [bell pepper], KAMATIS [tomato], SWEET CORN, SIBUYAS [onion], DAHON? [leaves/leafy vegetables?], KAMOTI [kamote/sweet potato] |
+| Q3 Years as member | 2 YEARS (digit written like "√") [verified on paper 2026-11-13] |
+| Q4 Crops produced | paliya [bitter gourd], talong [eggplant], atsal [bell pepper], kamatis [tomato], sweet corn, sibuyas dahon [spring onion], kamote [sweet potato] [verified on paper 2026-11-13] |
 | Q5 Problems encountered | Insects/Pests (checked); Plant disease (checked); Others (checked): "WHITE FLIES" |
-| Q6 Est. annual farm income | 50 K? |
+| Q6 Est. annual farm income | 50 K [= ₱50,000] [verified on paper 2026-11-13] |
 
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 5 | 4 | 4 | 5? | 5 | 4 | 4 | 5 | 5 | 4 |
+| 5 | 4 | 4 | 5 | 5 | 4 | 4 | 5 | 5 | 4 |
 
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 5 | 5 | 6 | 6? | 4? | 6 | 5 | 4 | 3 | 5 | 6 | 5 | 3? |
+| 5 | 5 | 6 | 6 | 6 | 6 | 5 | 4 | 3 | 5 | 6 | 5 | 3 |
 
 **Comments/Suggestions:** None
 
@@ -979,12 +1083,12 @@ p4: Comments/Suggestions.
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 4 | 5? | 2 | 3 | 4 | 4 | 1 | 5 | 5 | 5 |
+| 4 | 5 | 2 | 3 | 4 | 4 | 1 | 5 | 5 | 5 |
 
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 2 | 4 | 5 | 7 | 6 | 1? | 4 | 4 | 5? | 3? | 1 | 4 | 7 |
+| 2 | 4 | 5 | 7 | 6 | 1 | 4 | 4 | 5 | 3 | 1 | 4 | 7 |
 
 **Comments/Suggestions:** None
 
@@ -1013,17 +1117,17 @@ p4: Comments/Suggestions.
 | Q3 Years as member | 2 years |
 | Q4 Crops produced | Talong [eggplant] |
 | Q5 Problems encountered | Insects/Pests (checked); Plant disease (checked) |
-| Q6 Est. annual farm income | 100,000? (written "100.000"/"100,000") |
+| Q6 Est. annual farm income | 100.000 [= ₱100,000] [verified on paper 2026-11-13] |
 
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 3 | 3 | 3 | 3 | 3 | 3 | 5? | 3 | BLANK | 3 |
+| 3 | 3 | 3 | 3 | 3 | 3 | 5 | 3 | BLANK | 3 |
 
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 6 | 7 | BLANK | 7 | 7 | 7 | 7 | 4 | 4 | 4? | 7 | BLANK? | 4? |
+| 6 | 7 | BLANK | 7 | 7 | 7 | 7 | 4 | 4 | 4 | 7 | BLANK | 4 |
 
 **Comments/Suggestions:** "no comment"
 
@@ -1085,19 +1189,19 @@ p4: Comments/Suggestions.
 | Q3 Years as member | 2 years |
 | Q4 Crops produced | paliya [bitter gourd/ampalaya], Talong [eggplant], kalabasa [squash], pipino [cucumber] |
 | Q5 Problems encountered | Insects/Pests (checked); Plant disease (checked) |
-| Q6 Est. annual farm income | ₱ 10,000? (written "₱ 10 000") |
+| Q6 Est. annual farm income | ₱100,000 (written "₱ 100 000") [verified on paper 2026-11-13] |
 
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 4? | 4? | BLANK? | 5 | 5 | 3 | 5 | 5 | 5 | 5 |
+| 4 | 4 | BLANK | 5 | 5 | 3 | 5 | 5 | 5 | 5 |
 
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 5 | 6 | 6 | 6 | 7 | 7 | 6 | 4 | 4 | 5 | 6 | 4 | 6 |
 
-**Comments/Suggestions:** "Nindot para sa mga naka tigo sa phone. para Mas easy ang Transaction." [Gloss: Nice for those who are used to (?) the phone, so the transaction is easier.]
+**Comments/Suggestions:** "Nindot para sa mga nakatigo sa phone para mas easy ang transaction." [Nice for those who are used to phones, so the transaction is easier.] [verified on paper 2026-11-13]
 
 **Flags:**
 - R21 Q6: the amount reads "₱ 10 000" and the separator is unclear (10,000 or 10.000); read as ₱10,000.
@@ -1124,14 +1228,14 @@ p4: Comments/Suggestions.
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 4 | 4 | 4? | 4? | 4 | 2 | 4 | 2 | 3 | 3 |
+| 4 | 4 | 4 | 4 | 4 | 2 | 4 | 2 | 3 | 3 |
 
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 7 | 4? | 7 | 6 | 7 | 6 | 7 | 7 | 4 | 5 | 6 | 6 | 6 |
+| 7 | 7 | 7 | 6 | 7 | 6 | 7 | 7 | 4 | 5 | 6 | 6 | 6 |
 
-**Comments/Suggestions:** "I'm so overwhelm that I strongly recommend it to my friends to use this app."
+**Comments/Suggestions:** "I'm so overwhelm that I strongly recommend it to my friends to use this app." [verified on paper 2026-11-13]
 
 **Flags:**
 - R22 Q6: income left blank.
@@ -1164,7 +1268,7 @@ p4: Comments/Suggestions.
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 4 | 4 | 6 | 6 | 6 | 7 | 4 | 4 | BLANK | 5 | BLANK | 6? | BLANK |
+| 4 | 4 | 6 | 6 | 6 | 7 | 4 | 4 | BLANK | 5 | BLANK | 6 | BLANK |
 
 **Comments/Suggestions:** "IM so over whel that I strongly recommend it Im my frinds to use this app" [read as: I'm so overwhelmed that I strongly recommend it to my friends to use this app]
 
@@ -1190,7 +1294,7 @@ p4: Comments/Suggestions.
 | Q3 Years as member | "2-3 years pero dili sure kung sakto akong pagag pangagpas" [2-3 years but not sure if my estimate is correct] |
 | Q4 Crops produced | "Talong, Okra, pipino, upo, batong, ~~talo~~ Labuyo alogbati" [eggplant, okra, cucumber, bottle gourd, string beans, chili (labuyo), Malabar spinach (alugbati)]; "talo" crossed out |
 | Q5 Problems encountered | Insects/Pests (checked); Plant disease (checked); Others (checked): "Kawatan sa silingan" [thieves from the neighbors] |
-| Q6 Est. annual farm income | "₱200,000? yearly ang bana-bana na ko sa 1 year" [₱200,000 yearly is my estimate for 1 year] |
+| Q6 Est. annual farm income | "₱200,000 yearly ang bana-bana na ko sa 1 year" [₱200,000 yearly is my estimate] [verified on paper 2026-11-13] |
 
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
@@ -1224,9 +1328,9 @@ p4: Comments/Suggestions.
 | Q1 Role | Member (checked) |
 | Q2 Sex | Male (checked) |
 | Q3 Years as member | 2 |
-| Q4 Crops produced | "OPO? SIKAW?" [likely upo = bottle gourd; sikwa = sponge gourd/patola] |
+| Q4 Crops produced | upo [bottle gourd], sikwa [sponge gourd] [verified on paper 2026-11-13] |
 | Q5 Problems encountered | Insects/Pests (checked); Plant disease (checked) |
-| Q6 Est. annual farm income | "100.000?" (written "100.00 0", likely 100,000) |
+| Q6 Est. annual farm income | 100.00 0 [= ₱100,000] [verified on paper 2026-11-13] |
 
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
@@ -1271,9 +1375,9 @@ p4: Comments/Suggestions.
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 6 | 6 | 6 | 6 | 7 | 7 | 6 | 7? | 7 | 7 | 6 | 6 | 7 |
+| 6 | 6 | 6 | 6 | 7 | 7 | 6 | 7 | 7 | 7 | 6 | 6 | 7 |
 
-**Comments/Suggestions:** "Kini ang app maayo para masayon ang pagpalit ug mga utanon, kinahanglan pa i-enprasizo? ang kini nga klase nga app." [This app is good for making it easy to buy vegetables; this kind of app needs to be emphasized/promoted more.] (cursive; several words uncertain)
+**Comments/Suggestions:** "Kini ang app maayo para masayon ang pagpalit ug mga utanon. Kinahanglan pa i-improve ang kini nga klase nga app." [This app is good for making it easier to buy vegetables. This kind of app still needs to be improved.] [verified on paper 2026-11-13]
 
 **Flags:**
 - R26 2B-Q8: "7" has a heavy closed loop at the top (could be another digit overwritten into a 7); read as 7 — verify. Q9 and Q10 also have looped-top 7s but read clearly as 7.
@@ -1291,15 +1395,15 @@ p4: Comments/Suggestions.
 |---|---|
 | Q1 Role | Member (checked) |
 | Q2 Sex | Male (checked) |
-| Q3 Years as member | "13? Years" |
+| Q3 Years as member | 3 Years (a stray mark before the 3) [verified on paper 2026-11-13] |
 | Q4 Crops produced | "Cauliflower, Ampalaya, Batong, Pechay, Atsal" [cauliflower, bitter gourd, string beans, pechay/bok choy, bell pepper] |
 | Q5 Problems encountered | Insects/Pests (checked); Plant disease (checked); Others (checked, nothing specified) |
-| Q6 Est. annual farm income | "180,000?" |
+| Q6 Est. annual farm income | 150,000 [verified on paper 2026-11-13] |
 
 **Part 2A (1-5)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 |
 |---|---|---|---|---|---|---|---|---|---|
-| 5 | 3 | 4? | 5 | 3 | 3 | 5 | 5 | 5 | 5 |
+| 5 | 3 | 4 | 5 | 3 | 3 | 5 | 5 | 5 | 5 |
 
 **Part 2B (1-7)**
 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 |
@@ -1326,7 +1430,7 @@ p4: Comments/Suggestions.
 | Q1 Role | Member (checked) |
 | Q2 Sex | Male (checked) |
 | Q3 Years as member | 3 |
-| Q4 Crops produced | "Palya? Kamates" [bitter gourd (ampalaya), tomato] |
+| Q4 Crops produced | paliya [bitter gourd], kamatis [tomato] [verified on paper 2026-11-13] |
 | Q5 Problems encountered | Insects/Pests (checked); Plant disease (checked) |
 | Q6 Est. annual farm income | 20,000 |
 
