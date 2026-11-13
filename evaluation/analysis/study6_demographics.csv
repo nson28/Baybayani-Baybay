@@ -1,0 +1,28 @@
+code,role,sex,years_member,crops,n_crops,insects_pests,plant_disease,others,others_specified,annual_income_php,years_group,income_group
+R02,Member,Male,2.0,Bitter gourd (ampalaya); Okra; Squash; Tomato,4,True,False,False,,30000.0,2 to less than 3 years,"₱50,000 or less"
+R03,Member,Male,1.0,Melon (muskmelon); Watermelon,2,True,True,False,,,1 to less than 2 years,Not reported
+R04,Others (applicant for membership),Male,0.0,Cucumber; String beans; Okra; Eggplant,4,True,True,True,unspecified,,Less than 1 year,Not reported
+R05,Member,Female,1.5,String beans; Cucumber; Sweet corn; Calamansi,4,True,True,False,,50000.0,1 to less than 2 years,"₱50,000 or less"
+R06,Member,Male,2.0,Bell pepper (atsal),1,True,True,False,,100000.0,2 to less than 3 years,"₱50,001 – ₱100,000"
+R07,Member,Female,2.0,"Cucumber; Bottle gourd (upo); Chili pepper (sili, labuyo, espada); Squash",4,True,False,True,unspecified,60000.0,2 to less than 3 years,"₱50,001 – ₱100,000"
+R08,Member,Male,2.0,Eggplant; Cucumber; Bottle gourd (upo); Watermelon,4,True,True,False,,10000.0,2 to less than 3 years,"₱50,000 or less"
+R09,Member,Male,2.0,"Eggplant; Bottle gourd (upo); Bell pepper (atsal); Chili pepper (sili, labuyo, espada); Cucumber; Pakudo (local name); Spring onion",7,True,False,True,unspecified,10000.0,2 to less than 3 years,"₱50,000 or less"
+R10,Member,Male,2.5,Eggplant; Bitter gourd (ampalaya); Squash; Bell pepper (atsal),4,True,True,False,,35000.0,2 to less than 3 years,"₱50,000 or less"
+R11,Officer,Male,2.0,Pinakbet vegetables (mixed); Cauliflower; Lettuce; Cabbage,4,True,False,True,Typhoon,,2 to less than 3 years,Not reported
+R12,Member,Male,3.0,Eggplant,1,True,True,True,unspecified,200000.0,3 years or more,"Above ₱150,000"
+R13,Member,Male,2.0,"Bell pepper (atsal); Pakudo (local name); Chili pepper (sili, labuyo, espada); Okra",4,True,False,False,,,2 to less than 3 years,Not reported
+R14,Member,Female,3.0,,0,False,False,False,,,3 years or more,Not reported
+R15,Officer,Female,2.0,Bitter gourd (ampalaya); Watermelon; Squash; Okra; Cucumber,5,True,True,False,,,2 to less than 3 years,Not reported
+R16,Member,Male,0.75,"String beans; Bell pepper (atsal); Melon (muskmelon); Chili pepper (sili, labuyo, espada); Squash",5,True,True,False,,,Less than 1 year,Not reported
+R17,Member,Male,2.0,Bitter gourd (ampalaya); Eggplant; Bell pepper (atsal); Tomato; Sweet corn; Spring onion; Sweet potato,7,True,True,True,White flies,50000.0,2 to less than 3 years,"₱50,000 or less"
+R18,Member,Male,2.0,String beans; Bitter gourd (ampalaya); Cucumber; Tomato; Eggplant,5,True,False,True,unspecified,65000.0,2 to less than 3 years,"₱50,001 – ₱100,000"
+R19,Member,Male,2.0,Eggplant,1,True,True,False,,100000.0,2 to less than 3 years,"₱50,001 – ₱100,000"
+R20,Member,Male,2.0,Pechay; Sweet corn; Eggplant,3,True,True,False,,120000.0,2 to less than 3 years,"₱100,001 – ₱150,000"
+R21,Member,Female,2.0,Bitter gourd (ampalaya); Eggplant; Squash; Cucumber,4,True,True,False,,100000.0,2 to less than 3 years,"₱50,001 – ₱100,000"
+R22,Member,Female,1.0,"Bottle gourd (upo); Bitter gourd (ampalaya); Pechay; Eggplant; Tomato; Okra; Chili pepper (sili, labuyo, espada); Bell pepper (atsal)",8,True,True,False,,,1 to less than 2 years,Not reported
+R23,Member,Female,2.0,Bottle gourd (upo); String beans; Bitter gourd (ampalaya); Eggplant; Watermelon,5,True,False,False,,,2 to less than 3 years,Not reported
+R24,Member,Female,2.5,"Eggplant; Okra; Cucumber; Bottle gourd (upo); String beans; Chili pepper (sili, labuyo, espada); Malabar spinach (alugbati)",7,True,True,True,Theft by neighbors,200000.0,2 to less than 3 years,"Above ₱150,000"
+R25,Member,Male,2.0,Bottle gourd (upo); Sponge gourd (sikwa),2,True,True,False,,100000.0,2 to less than 3 years,"₱50,001 – ₱100,000"
+R26,Member,Male,3.0,Eggplant; String beans; Cucumber; Bottle gourd (upo),4,True,True,False,,100000.0,3 years or more,"₱50,001 – ₱100,000"
+R27,Member,Male,3.0,Cauliflower; Bitter gourd (ampalaya); String beans; Pechay; Bell pepper (atsal),5,True,True,True,unspecified,150000.0,3 years or more,"₱100,001 – ₱150,000"
+R28,Member,Male,3.0,Bitter gourd (ampalaya); Tomato,2,True,True,False,,20000.0,3 years or more,"₱50,000 or less"
