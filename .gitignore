@@ -34,3 +34,6 @@ bun.lockb
 # Android build files
 android/capacitor.settings.gradle
 android/app/capacitor.build.gradle
+
+# Study 6: confidential respondent key (code-to-name), kept local only
+evaluation/respondent_key.md
